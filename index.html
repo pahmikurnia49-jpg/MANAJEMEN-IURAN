@@ -37,7 +37,7 @@ button:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .field textarea{min-height:68px;resize:vertical}
 .pwd-wrap{position:relative;display:flex;align-items:center}
 .pwd-wrap input{padding-right:42px}
-.pwd-toggle{position:absolute;right:4px;background:transparent;border:0;color:var(--muted);padding:8px 10px;font-size:16px;border-radius:8px}
+.pwd-toggle{position:absolute;right:4px;background:transparent;border:0;color:var(--muted);padding:8px 10px;font-size:16px;border-radius:8px;cursor:pointer}
 .pwd-toggle:hover{background:#f1f5f9;color:var(--navy)}
 .error{color:var(--red);font-size:12px;min-height:18px;margin-top:4px}
 .notice{padding:10px 12px;border-radius:10px;background:#fff8df;color:#735b00;font-size:12px;margin:0 0 14px;line-height:1.4;border:1px solid #f2e3a1}
@@ -664,7 +664,7 @@ function openMemberCardModal(memberId){
   </div></div>`;
 
   root.querySelector('#closeModal').onclick=()=>root.innerHTML='';
-  root.querySelectorAll('[data-dl-receipt]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.dataset.dl-receipt));
+  root.querySelectorAll('[data-dl-receipt]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.dataset.dlReceipt));
   root.querySelector('#cardPdfBtn').onclick=()=>downloadMemberCardPdf(m, payList, due, totalPaid, sisa, isLunas);
 }
 
