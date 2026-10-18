@@ -6,50 +6,172 @@
 <meta name="theme-color" content="#123b63">
 <title>Manajemen Iuran</title>
 <style>
-:root{--navy:#123b63;--blue:#1f6feb;--sky:#eaf3ff;--yellow:#f4c84a;--bg:#f4f7fb;--ink:#1e293b;--muted:#64748b;--line:#dce4ee;--white:#fff;--red:#b42318;--green:#137547}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:650;background:var(--blue);color:white}button.secondary{background:#e8eef6;color:var(--navy)}button.danger{background:#fff0ef;color:var(--red)}button:disabled{opacity:.5;cursor:not-allowed}.hidden{display:none!important}.app{min-height:100vh}.topbar{background:var(--navy);color:white;padding:16px clamp(16px,4vw,36px);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:42px;height:42px;border-radius:12px;background:var(--yellow);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:20px}.brand h1{margin:0;font-size:20px}.brand p{margin:1px 0 0;color:#d4e5f7;font-size:12px}.shell{max-width:1200px;margin:auto;padding:22px clamp(14px,3vw,28px)}.login-wrap{min-height:80vh;display:grid;place-items:center;padding:20px}.login-card{width:min(100%,420px);background:white;padding:28px;border-radius:20px;box-shadow:0 12px 40px #16324f12}.login-card h2{margin:0 0 8px;color:var(--navy)}.login-card p{color:var(--muted);margin:0 0 22px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}.field label{font-size:13px;font-weight:700;color:#334155}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:11px 12px;background:white;color:var(--ink)}.field textarea{min-height:72px;resize:vertical}.error{color:var(--red);font-size:13px;min-height:18px}.notice{padding:12px 14px;border-radius:12px;background:#fff8df;color:#735b00;font-size:13px;margin:0 0 16px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:20px}.sidebar{background:white;border:1px solid var(--line);border-radius:16px;padding:12px;height:max-content;position:sticky;top:16px}.navbtn{width:100%;display:flex;gap:10px;align-items:center;text-align:left;margin:3px 0;background:transparent;color:#334155}.navbtn.active{background:var(--sky);color:var(--navy)}.main{min-width:0}.pagehead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:18px}.pagehead h2{margin:0;color:var(--navy);font-size:25px}.pagehead p{margin:4px 0 0;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:16px}.stat .label{font-size:12px;color:var(--muted);font-weight:700}.stat .value{font-size:22px;font-weight:800;margin-top:7px;color:var(--navy);overflow-wrap:anywhere}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px}.panel h3{margin:0 0 14px;color:var(--navy);font-size:17px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row .grow{flex:1;min-width:160px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:650px;background:white}th,td{padding:11px 12px;border-bottom:1px solid #e8edf3;text-align:left;vertical-align:top;font-size:13px}th{background:#f7f9fc;color:#526174;font-size:12px;text-transform:uppercase;letter-spacing:.03em}tr:last-child td{border-bottom:0}.empty{text-align:center;color:var(--muted);padding:28px!important}.pill{display:inline-block;border-radius:99px;padding:3px 9px;background:#eaf3ff;color:#1d4e89;font-size:11px;font-weight:750}.pill.green{background:#e7f8ef;color:var(--green)}.pill.red{background:#fff0ef;color:var(--red)}.small{font-size:12px;color:var(--muted)}.actions{display:flex;gap:6px;flex-wrap:wrap}.actions button{padding:7px 9px;font-size:12px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.span2{grid-column:1/-1}.hr{height:1px;background:var(--line);margin:16px 0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#102a43;color:white;padding:12px 18px;border-radius:12px;box-shadow:0 8px 24px #0002;z-index:20;max-width:90vw}.modal-backdrop{position:fixed;inset:0;background:#0b1f3380;display:grid;place-items:center;padding:14px;z-index:30}.modal{background:white;border-radius:18px;padding:22px;width:min(100%,560px);max-height:90vh;overflow:auto}.modal h3{margin:0 0 14px;color:var(--navy)}.modal-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.muted{color:var(--muted)}.mobile-nav{display:none}
-@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:flex;overflow:auto;gap:4px}.navbtn{white-space:nowrap;width:auto}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar .navbtn{padding:9px 11px}.sidebar .navbtn span:last-child{display:inline}}
-@media(max-width:520px){.shell{padding:14px}.cards{gap:8px}.stat{padding:12px}.stat .value{font-size:18px}.panel{padding:13px}.formgrid{grid-template-columns:1fr}.span2{grid-column:auto}.pagehead h2{font-size:22px}.topbar{padding:12px 14px}.brand h1{font-size:18px}}
+:root{--navy:#123b63;--blue:#1f6feb;--sky:#eaf3ff;--yellow:#f4c84a;--bg:#f4f7fb;--ink:#1e293b;--muted:#64748b;--line:#dce4ee;--white:#fff;--red:#b42318;--green:#137547;--shadow:0 4px 20px -2px rgba(18,59,99,0.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0;border-radius:10px;padding:9px 14px;font-weight:600;background:var(--blue);color:white;transition:all .15s ease}
+button:hover{opacity:.92;transform:translateY(-1px)}
+button:active{transform:translateY(0)}
+button.secondary{background:#e8eef6;color:var(--navy)}
+button.secondary:hover{background:#dbe5f2}
+button.danger{background:#fff0ef;color:var(--red)}
+button.danger:hover{background:#ffe2e0}
+button:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.hidden{display:none!important}
+.app{min-height:100vh;display:flex;flex-direction:column}
+.topbar{background:linear-gradient(135deg,var(--navy),#0f2e4e);color:white;padding:14px clamp(14px,3vw,28px);display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 2px 10px #0001}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{width:38px;height:38px;border-radius:10px;background:var(--yellow);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:18px;box-shadow:0 2px 8px #0002}
+.brand h1{margin:0;font-size:18px;font-weight:800;letter-spacing:-.01em}
+.brand p{margin:0;color:#d4e5f7;font-size:11px}
+.shell{max-width:1200px;width:100%;margin:0 auto;padding:18px clamp(12px,2.5vw,24px);flex:1}
+.login-wrap{min-height:90vh;display:grid;place-items:center;padding:16px}
+.login-card{width:min(100%,400px);background:white;padding:28px 24px;border-radius:20px;box-shadow:0 12px 40px rgba(18,59,99,0.12);border:1px solid var(--line)}
+.login-card h2{margin:0 0 6px;color:var(--navy);font-size:22px}
+.login-card p{color:var(--muted);margin:0 0 20px;font-size:13px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:12px;font-weight:700;color:#334155}
+.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:10px 12px;background:white;color:var(--ink);outline:0;transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,111,235,0.12)}
+.field textarea{min-height:68px;resize:vertical}
+.pwd-wrap{position:relative;display:flex;align-items:center}
+.pwd-wrap input{padding-right:42px}
+.pwd-toggle{position:absolute;right:4px;background:transparent;border:0;color:var(--muted);padding:8px 10px;font-size:16px;border-radius:8px}
+.pwd-toggle:hover{background:#f1f5f9;color:var(--navy)}
+.error{color:var(--red);font-size:12px;min-height:18px;margin-top:4px}
+.notice{padding:10px 12px;border-radius:10px;background:#fff8df;color:#735b00;font-size:12px;margin:0 0 14px;line-height:1.4;border:1px solid #f2e3a1}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px}
+.sidebar{background:white;border:1px solid var(--line);border-radius:16px;padding:10px;height:max-content;position:sticky;top:16px;box-shadow:var(--shadow)}
+.navbtn{width:100%;display:flex;gap:10px;align-items:center;text-align:left;margin:2px 0;padding:10px 12px;background:transparent;color:#475569;border-radius:10px;font-weight:600;font-size:13px}
+.navbtn:hover{background:#f1f5f9;color:var(--navy)}
+.navbtn.active{background:var(--sky);color:var(--navy);font-weight:700}
+.main{min-width:0}
+.pagehead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.pagehead h2{margin:0;color:var(--navy);font-size:22px;font-weight:800}
+.pagehead p{margin:2px 0 0;color:var(--muted);font-size:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:white;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--blue)}
+.stat.green::before{background:var(--green)}
+.stat.red::before{background:var(--red)}
+.stat.yellow::before{background:var(--yellow)}
+.stat .label{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.stat .value{font-size:20px;font-weight:800;margin-top:4px;color:var(--navy);overflow-wrap:anywhere}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 12px;color:var(--navy);font-size:16px;font-weight:700}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row .grow{flex:1;min-width:140px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:600px;background:white}
+th,td{padding:10px 12px;border-bottom:1px solid #e8edf3;text-align:left;vertical-align:middle;font-size:13px}
+th{background:#f8fafc;color:#475569;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+.empty{text-align:center;color:var(--muted);padding:24px!important}
+.pill{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:3px 9px;background:#eaf3ff;color:#1d4e89;font-size:11px;font-weight:700}
+.pill.green{background:#e7f8ef;color:var(--green)}
+.pill.red{background:#fff0ef;color:var(--red)}
+.pill.yellow{background:#fff8df;color:#735b00}
+.small{font-size:12px;color:var(--muted)}
+.actions{display:flex;gap:4px;flex-wrap:wrap}
+.actions button{padding:6px 9px;font-size:11px;border-radius:8px}
+.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}
+.span2{grid-column:1/-1}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#0f2e4e;color:white;padding:10px 18px;border-radius:30px;box-shadow:0 10px 30px #0004;z-index:100;max-width:90vw;font-size:13px;font-weight:600;text-align:center}
+.modal-backdrop{position:fixed;inset:0;background:rgba(11,31,51,0.65);backdrop-filter:blur(2px);display:grid;place-items:center;padding:14px;z-index:40}
+.modal{background:white;border-radius:18px;padding:20px;width:min(100%,540px);max-height:88vh;overflow-y:auto;box-shadow:0 20px 50px #0003}
+.modal h3{margin:0 0 12px;color:var(--navy);font-size:18px}
+.modal-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.loading-overlay{position:fixed;inset:0;background:rgba(18,59,99,0.7);backdrop-filter:blur(3px);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;color:white;gap:12px;font-weight:600}
+.spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,0.25);border-top-color:var(--yellow);border-radius:50%;animation:spin 0.75s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:768px){
+ .layout{grid-template-columns:1fr}
+ .sidebar{position:fixed;bottom:0;left:0;right:0;top:auto;z-index:30;border-radius:16px 16px 0 0;display:flex;justify-content:space-around;padding:8px;background:white;box-shadow:0 -4px 20px #0001;border-top:1px solid var(--line)}
+ .sidebar .navbtn{flex-direction:column;gap:2px;font-size:10px;padding:6px 8px;text-align:center;border-radius:8px;margin:0}
+ .sidebar .navbtn span:first-child{font-size:16px}
+ .shell{padding-bottom:70px}
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .stat{padding:10px 12px}
+ .stat .value{font-size:16px}
+ .formgrid{grid-template-columns:1fr}
+ .pagehead{flex-direction:column;align-items:flex-start;gap:8px}
+ .pagehead .row{width:100%;justify-content:flex-start}
+ .panel{padding:12px}
+}
 </style>
 </head>
 <body>
+
+<div id="loadingOverlay" class="loading-overlay hidden">
+  <div class="spinner"></div>
+  <div id="loadingText">Memuat data…</div>
+</div>
+
 <div id="loginView" class="login-wrap">
   <div class="login-card">
-    <div class="brand" style="margin-bottom:18px"><div class="logo">MI</div><div><h1 style="color:#123b63">Manajemen Iuran</h1><p style="color:#64748b">Pencatatan kegiatan dan keuangan</p></div></div>
-    <div class="notice">Aplikasi khusus admin. Gunakan akun yang sudah dibuat melalui Firebase Authentication.</div>
+    <div class="brand" style="margin-bottom:16px">
+      <div class="logo">MI</div>
+      <div><h1 style="color:#123b63">Manajemen Iuran</h1><p style="color:#64748b">Pencatatan kegiatan dan keuangan</p></div>
+    </div>
+    <div class="notice">Aplikasi khusus admin. Gunakan akun terdaftar Firebase Authentication.</div>
     <form id="loginForm">
-      <div class="field"><label for="email">Email admin</label><input id="email" type="email" autocomplete="username" required placeholder="admin@email.com"></div>
-      <div class="field"><label for="password">Kata sandi</label><input id="password" type="password" autocomplete="current-password" required placeholder="Kata sandi"></div>
-      <button style="width:100%" type="submit">Masuk</button>
-      <div id="loginError" class="error" style="margin-top:10px"></div>
+      <div class="field">
+        <label for="email">Email admin</label>
+        <input id="email" type="email" autocomplete="username" required placeholder="admin@email.com">
+      </div>
+      <div class="field">
+        <label for="password">Kata sandi</label>
+        <div class="pwd-wrap">
+          <input id="password" type="password" autocomplete="current-password" required placeholder="Kata sandi">
+          <button type="button" id="togglePasswordBtn" class="pwd-toggle" title="Lihat/Sembunyikan Kata Sandi">👁️</button>
+        </div>
+      </div>
+      <button style="width:100%;margin-top:8px" type="submit">Masuk ke Sistem</button>
+      <div id="loginError" class="error"></div>
     </form>
   </div>
 </div>
+
 <div id="appView" class="app hidden">
   <header class="topbar">
-    <div class="brand"><div class="logo">MI</div><div><h1>Manajemen Iuran</h1><p>Kelola kegiatan, peserta, dan kas</p></div></div>
-    <div class="row"><span id="userEmail" class="small" style="color:#e1edfa"></span><button id="logoutBtn" class="secondary">Keluar</button></div>
+    <div class="brand">
+      <div class="logo">MI</div>
+      <div><h1>Manajemen Iuran</h1><p>Kelola kegiatan, peserta & kas</p></div>
+    </div>
+    <div class="row">
+      <span id="userEmail" class="small" style="color:#e1edfa"></span>
+      <button id="logoutBtn" class="secondary" style="padding:6px 12px;font-size:12px">Keluar</button>
+    </div>
   </header>
+
   <div class="shell">
     <div class="layout">
       <aside class="sidebar">
         <button class="navbtn active" data-page="dashboard"><span>▦</span><span>Dashboard</span></button>
         <button class="navbtn" data-page="events"><span>▣</span><span>Kegiatan</span></button>
         <button class="navbtn" data-page="finance"><span>▤</span><span>Buku Kas</span></button>
-        <button class="navbtn" data-page="reports"><span>▥</span><span>Laporan</span></button>
+        <button class="navbtn" data-page="reports"><span>▥</span><span>Laporan PDF</span></button>
       </aside>
-      <main id="mainContent" class="main"><div class="panel">Memuat data…</div></main>
+      <main id="mainContent" class="main"></main>
     </div>
   </div>
 </div>
-<div id="modalRoot"></div><div id="toast" class="toast hidden"></div>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast hidden"></div>
+
+<!-- External Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 import { getFirestore, collection, doc, getDocs, getDoc, addDoc, setDoc, updateDoc, deleteDoc, query, orderBy, serverTimestamp, writeBatch } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
-/* Konfigurasi Web Firebase milik Mamang */
 const firebaseConfig = {
   apiKey: "AIzaSyCLptzfb11LliqVs2OxkmuBQfipphPyNZI",
   authDomain: "manajemen-iuran.firebaseapp.com",
@@ -67,76 +189,811 @@ const money = n => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR
 const dateFmt = v => { if(!v) return '-'; const d = typeof v==='string' ? new Date(v+'T00:00:00') : v.toDate ? v.toDate() : new Date(v); return isNaN(d) ? '-' : d.toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'}); };
 const today = () => new Date().toLocaleDateString('en-CA');
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const slug = s => String(s||'kegiatan').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'kegiatan';
+
 let currentUser=null, events=[], selectedEvent=null, members=[], transactions=[], currentPage='dashboard', toastTimer;
 
+function showLoading(msg='Memuat data…'){ $('#loadingText').textContent=msg; $('#loadingOverlay').classList.remove('hidden'); }
+function hideLoading(){ $('#loadingOverlay').classList.add('hidden'); }
 function toast(msg){ const el=$('#toast'); el.textContent=msg; el.classList.remove('hidden'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.add('hidden'),3200); }
-function errText(e){ console.error(e); if(e.code==='permission-denied') return 'Akses ditolak. Periksa Firestore Security Rules dan UID admin.'; if(e.code==='auth/invalid-credential') return 'Email atau kata sandi salah.'; if(e.code==='auth/too-many-requests') return 'Terlalu banyak percobaan. Coba lagi nanti.'; return e.message || 'Terjadi kesalahan. Coba lagi.'; }
+function errText(e){ console.error(e); if(e.code==='permission-denied') return 'Akses ditolak. Periksa Firestore Security Rules.'; if(e.code==='auth/invalid-credential') return 'Email atau kata sandi salah.'; return e.message || 'Terjadi kesalahan.'; }
+
 function eventRef(id){return doc(db,'events',id)}
 function memberCol(id){return collection(db,'events',id,'members')}
 function txCol(id){return collection(db,'events',id,'transactions')}
+
 function getBalance(list){return list.reduce((s,t)=>s+(t.status==='void'?0:(t.type==='expense'?-Number(t.amount||0):Number(t.amount||0))),0)}
-function getPaid(memberId){return transactions.filter(t=>t.type==='payment'&&t.status!=='void'&&t.memberId===memberId).reduce((s,t)=>s+Number(t.amount||0),0)}
-function eventStats(ev){const ts=ev._transactions||[];const ms=ev._members||[];const incoming=ts.filter(t=>t.status!=='void'&&t.type!=='expense').reduce((s,t)=>s+Number(t.amount||0),0);const expenses=ts.filter(t=>t.status!=='void'&&t.type==='expense').reduce((s,t)=>s+Number(t.amount||0),0);const obligations=ms.reduce((s,m)=>s+Number(m.requiredAmount??ev.defaultFee??0),0);const paid=ts.filter(t=>t.status!=='void'&&t.type==='payment').reduce((s,t)=>s+Number(t.amount||0),0);return {balance:Number(ev.openingBalance||0)+incoming-expenses,incoming,expenses,obligations,paid,arrears:Math.max(0,obligations-paid),participants:ms.length}}
-async function loadEvents(){const snap=await getDocs(query(collection(db,'events'),orderBy('createdAt','desc')));events=snap.docs.map(d=>({id:d.id,...d.data()}));}
-async function loadEventDetails(id){const [mSnap,tSnap]=await Promise.all([getDocs(memberCol(id)),getDocs(query(txCol(id),orderBy('paymentDate','desc')))]);members=mSnap.docs.map(d=>({id:d.id,...d.data()}));transactions=tSnap.docs.map(d=>({id:d.id,...d.data()}));selectedEvent=events.find(e=>e.id===id)||null;if(selectedEvent){const balance=Number(selectedEvent.openingBalance||0)+getBalance(transactions);if(Number(selectedEvent.cachedBalance||0)!==balance){await updateDoc(eventRef(id),{cachedBalance:balance,memberCount:members.length,updatedAt:serverTimestamp()});selectedEvent.cachedBalance=balance;selectedEvent.memberCount=members.length;}}}
-async function refresh(){await loadEvents();if(selectedEvent&&events.some(e=>e.id===selectedEvent.id))await loadEventDetails(selectedEvent.id);render();}
-function setPage(page){currentPage=page;document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));render();}
-function pageHead(title,sub,actions=''){return `<div class="pagehead"><div><h2>${title}</h2><p>${sub||''}</p></div><div class="row">${actions}</div></div>`}
-function stat(label,value){return `<div class="stat"><div class="label">${label}</div><div class="value">${value}</div></div>`}
-function emptyRow(cols,msg){return `<tr><td class="empty" colspan="${cols}">${msg}</td></tr>`}
+function getMemberPayments(memberId){return transactions.filter(t=>t.type==='payment'&&t.status!=='void'&&t.memberId===memberId).sort((a,b)=>(a.paymentDate||'').localeCompare(b.paymentDate||''));}
+function getPaid(memberId){return getMemberPayments(memberId).reduce((s,t)=>s+Number(t.amount||0),0);}
+
+async function loadEvents(){
+  showLoading('Memuat daftar kegiatan…');
+  try {
+    const snap=await getDocs(query(collection(db,'events'),orderBy('createdAt','desc')));
+    events=snap.docs.map(d=>({id:d.id,...d.data()}));
+  } finally { hideLoading(); }
+}
+
+async function loadEventDetails(id){
+  showLoading('Memuat Rincian Kegiatan…');
+  try {
+    const [mSnap,tSnap]=await Promise.all([getDocs(memberCol(id)),getDocs(query(txCol(id),orderBy('paymentDate','desc')))]);
+    members=mSnap.docs.map(d=>({id:d.id,...d.data()}));
+    transactions=tSnap.docs.map(d=>({id:d.id,...d.data()}));
+    selectedEvent=events.find(e=>e.id===id)||null;
+    if(selectedEvent){
+      const balance=Number(selectedEvent.openingBalance||0)+getBalance(transactions);
+      if(Number(selectedEvent.cachedBalance||0)!==balance || selectedEvent.memberCount!==members.length){
+        await updateDoc(eventRef(id),{cachedBalance:balance,memberCount:members.length,updatedAt:serverTimestamp()});
+        selectedEvent.cachedBalance=balance; selectedEvent.memberCount=members.length;
+      }
+    }
+  } finally { hideLoading(); }
+}
+
+async function refresh(){ await loadEvents(); if(selectedEvent&&events.some(e=>e.id===selectedEvent.id)) await loadEventDetails(selectedEvent.id); render(); }
+function setPage(page){ currentPage=page; document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page)); render(); }
+
+function pageHead(title,sub,actions=''){ return `<div class="pagehead"><div><h2>${title}</h2><p>${sub||''}</p></div><div class="row">${actions}</div></div>`; }
+function stat(label,value,color=''){ return `<div class="stat ${color}"><div class="label">${label}</div><div class="value">${value}</div></div>`; }
+function emptyRow(cols,msg){ return `<tr><td class="empty" colspan="${cols}">${msg}</td></tr>`; }
+
 function render(){
  const root=$('#mainContent');
  if(currentPage==='dashboard'){
-   const all=events.map(e=>({...e,_members:e._members||[],_transactions:e._transactions||[]}));
-   const knownBalances=all.reduce((s,e)=>s+Number(e.cachedBalance||0),0);
-   root.innerHTML=pageHead('Dashboard','Ringkasan pengelolaan kegiatan iuran')+
-   `<div class="cards">${stat('Jumlah kegiatan',events.length)}${stat('Kegiatan aktif',events.filter(e=>e.status!=='archived').length)}${stat('Total peserta',events.reduce((s,e)=>s+Number(e.memberCount||0),0))}${stat('Saldo tersimpan',money(knownBalances))}</div>
-   <div class="panel"><div class="row" style="justify-content:space-between"><h3>Kegiatan terbaru</h3><button id="dashAddEvent">+ Kegiatan</button></div><div class="table-wrap"><table><thead><tr><th>Nama kegiatan</th><th>Tanggal</th><th>Iuran/peserta</th><th>Status</th><th></th></tr></thead><tbody>${events.slice(0,8).map(e=>`<tr><td><b>${esc(e.name)}</b><div class="small">${esc(e.description||'')}</div></td><td>${dateFmt(e.startDate)}</td><td>${money(e.defaultFee)}</td><td><span class="pill ${e.status==='archived'?'red':'green'}">${e.status==='archived'?'Arsip':'Aktif'}</span></td><td><button class="secondary" data-open-event="${e.id}">Buka</button></td></tr>`).join('')||emptyRow(5,'Belum ada kegiatan. Tambahkan kegiatan pertama.')}</tbody></table></div></div>
-   <div class="notice">Catatan: angka saldo dan peserta di dashboard akan diperbarui saat data kegiatan dibuka dan disimpan. Gunakan menu Buku Kas untuk memeriksa rincian transaksi.</div>`;
+   const totalBal = events.reduce((s,e)=>s+Number(e.cachedBalance||0),0);
+   const activeEv = events.filter(e=>e.status!=='archived');
+   const totalMembers = events.reduce((s,e)=>s+Number(e.memberCount||0),0);
+
+   root.innerHTML=pageHead('Dashboard','Ringkasan Pengelolaan Kegiatan & Keuangan Kas')+
+   `<div class="cards">
+      ${stat('Total Kas Tersimpan',money(totalBal),'green')}
+      ${stat('Kegiatan Aktif',activeEv.length+' Kegiatan','yellow')}
+      ${stat('Total Peserta Tercatat',totalMembers+' Peserta')}
+      ${stat('Semua Kegiatan',events.length+' Total')}
+    </div>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between;margin-bottom:12px">
+        <h3 style="margin:0">Daftar Kegiatan Terbaru</h3>
+        <button id="dashAddEvent">+ Kegiatan Baru</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Nama Kegiatan</th><th>Tanggal</th><th>Iuran / Peserta</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody>${events.slice(0,6).map(e=>`
+            <tr>
+              <td><b>${esc(e.name)}</b><div class="small">${esc(e.description||'Tanpa deskripsi')}</div></td>
+              <td>${dateFmt(e.startDate)}</td>
+              <td>${money(e.defaultFee)}</td>
+              <td><span class="pill ${e.status==='archived'?'red':'green'}">${e.status==='archived'?'Arsip':'Aktif'}</span></td>
+              <td><button class="secondary" data-open-event="${e.id}">Buka Kas</button></td>
+            </tr>`).join('')||emptyRow(5,'Belum ada kegiatan. Buat kegiatan baru untuk memulai.')}
+          </tbody>
+        </table>
+      </div>
+    </div>`;
    $('#dashAddEvent').onclick=()=>openEventModal();
  } else if(currentPage==='events'){
-   root.innerHTML=pageHead('Kegiatan','Setiap kegiatan memiliki peserta dan buku kas terpisah.',`<button id="addEventBtn">+ Tambah kegiatan</button>`) +
-   `<div class="panel"><div class="row"><input id="eventSearch" class="grow" placeholder="Cari nama kegiatan…"><select id="eventFilter"><option value="all">Semua status</option><option value="active">Aktif</option><option value="archived">Arsip</option></select></div><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Kegiatan</th><th>Tanggal</th><th>Nominal iuran</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="eventsRows"></tbody></table></div></div>`;
-   $('#addEventBtn').onclick=()=>openEventModal(); renderEventRows();
-   $('#eventSearch').oninput=renderEventRows; $('#eventFilter').onchange=renderEventRows;
+   root.innerHTML=pageHead('Kelola Kegiatan','Daftar kegiatan iuran dan pengaturan awal.',`<button id="addEventBtn">+ Tambah Kegiatan</button>`)+
+   `<div class="panel">
+      <div class="row">
+        <input id="eventSearch" class="grow" placeholder="Cari kegiatan…">
+        <select id="eventFilter"><option value="all">Semua Status</option><option value="active">Aktif</option><option value="archived">Arsip</option></select>
+      </div>
+      <div class="table-wrap" style="margin-top:12px">
+        <table>
+          <thead><tr><th>Kegiatan</th><th>Tanggal</th><th>Nominal Iuran</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody id="eventsRows"></tbody>
+        </table>
+      </div>
+    </div>`;
+   $('#addEventBtn').onclick=()=>openEventModal();
+   renderEventRows();
+   $('#eventSearch').oninput=renderEventRows;
+   $('#eventFilter').onchange=renderEventRows;
  } else if(currentPage==='finance'){
-   root.innerHTML=pageHead('Buku Kas','Pilih kegiatan untuk melihat saldo, pemasukan, dan pengeluaran.')+
-   `<div class="panel"><div class="field"><label>Pilih kegiatan</label><select id="financeEvent"><option value="">-- Pilih kegiatan --</option>${events.map(e=>`<option value="${e.id}" ${selectedEvent?.id===e.id?'selected':''}>${esc(e.name)}${e.status==='archived'?' (Arsip)':''}</option>`).join('')}</select></div><div id="financeDetails">${selectedEvent?'<div class="small">Memuat buku kas…</div>':'<p class="muted">Pilih kegiatan untuk menampilkan buku kasnya.</p>'}</div></div>`;
-   $('#financeEvent').onchange=async e=>{if(!e.target.value){selectedEvent=null;members=[];transactions=[];render();return}try{await loadEventDetails(e.target.value);render();}catch(ex){toast(errText(ex));}};
+   root.innerHTML=pageHead('Buku Kas & Peserta','Kelola iuran, pencatatan transaksi, dan daftar peserta.')+
+   `<div class="panel">
+      <div class="field">
+        <label>Pilih Kegiatan Iuran</label>
+        <select id="financeEvent">
+          <option value="">-- Pilih Kegiatan --</option>
+          ${events.map(e=>`<option value="${e.id}" ${selectedEvent?.id===e.id?'selected':''}>${esc(e.name)}${e.status==='archived'?' (Arsip)':''}</option>`).join('')}
+        </select>
+      </div>
+      <div id="financeDetails">${selectedEvent?'':`<p class="small" style="text-align:center;padding:20px;color:var(--muted)">Silakan pilih kegiatan di atas untuk menampilkan Buku Kas dan Peserta.</p>`}</div>
+    </div>`;
+   $('#financeEvent').onchange=async e=>{
+     if(!e.target.value){selectedEvent=null;members=[];transactions=[];render();return;}
+     try{await loadEventDetails(e.target.value);render();}catch(ex){toast(errText(ex));}
+   };
    if(selectedEvent) renderFinanceDetails();
  } else if(currentPage==='reports'){
-   root.innerHTML=pageHead('Laporan','Unduh ringkasan kegiatan atau ekspor transaksi ke CSV.')+
-   `<div class="panel"><h3>Ekspor laporan</h3><div class="field"><label>Kegiatan</label><select id="reportEvent"><option value="">-- Pilih kegiatan --</option>${events.map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}</select></div><div class="row"><button id="exportTransactions">Ekspor buku kas (CSV)</button><button class="secondary" id="exportMembers">Ekspor daftar peserta (CSV)</button></div><p class="small" style="margin-top:12px">CSV bisa dibuka di Excel atau diimpor ke Google Spreadsheet. Untuk BKU, ekspor transaksi berdasarkan kegiatan yang dipilih.</p></div>
-   <div class="panel"><h3>Ringkasan</h3><div class="table-wrap"><table><thead><tr><th>Kegiatan</th><th>Status</th><th>Nominal iuran</th><th>Peserta tercatat</th></tr></thead><tbody>${events.map(e=>`<tr><td>${esc(e.name)}</td><td>${e.status==='archived'?'Arsip':'Aktif'}</td><td>${money(e.defaultFee)}</td><td>${Number(e.memberCount||0)}</td></tr>`).join('')||emptyRow(4,'Belum ada kegiatan.')}</tbody></table></div></div>`;
-   $('#exportTransactions').onclick=()=>exportSelected('tx');$('#exportMembers').onclick=()=>exportSelected('members');
+   root.innerHTML=pageHead('Laporan Keuangan PDF','Unduh Laporan BKU dan Rekapitulasi Pembayaran Peserta dalam bentuk PDF yang rapi.')+
+   `<div class="panel">
+      <h3>Cetak Laporan PDF</h3>
+      <div class="field"><label>Pilih Kegiatan</label>
+        <select id="reportEvent"><option value="">-- Pilih Kegiatan --</option>${events.map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}</select>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button id="pdfBkuBtn">📄 Unduh Laporan BKU (PDF)</button>
+        <button id="pdfMembersBtn" class="secondary">📄 Unduh Rekap Peserta (PDF)</button>
+        <button id="csvExportBtn" class="secondary">📊 Ekspor Buku Kas (CSV)</button>
+      </div>
+      <p class="small" style="margin-top:12px;color:var(--muted)">File PDF diformat khusus dengan tata letak rapat, rapi, dan nomor halaman otomatis agar konten tidak terpotong.</p>
+    </div>`;
+   $('#pdfBkuBtn').onclick=()=>generatePdfReport('bku');
+   $('#pdfMembersBtn').onclick=()=>generatePdfReport('members');
+   $('#csvExportBtn').onclick=()=>exportCSV();
  }
- root.querySelectorAll('[data-open-event]').forEach(b=>b.onclick=async()=>{try{await loadEventDetails(b.dataset.openEvent);currentPage='finance';setPage('finance');}catch(e){toast(errText(e));}});
+
+ root.querySelectorAll('[data-open-event]').forEach(b=>b.onclick=async()=>{
+   try{await loadEventDetails(b.dataset.openEvent);currentPage='finance';setPage('finance');}catch(e){toast(errText(e));}
+ });
 }
-function renderEventRows(){const body=$('#eventsRows');if(!body)return;const q=$('#eventSearch').value.toLowerCase(),f=$('#eventFilter').value;const list=events.filter(e=>(e.name||'').toLowerCase().includes(q)&&(f==='all'||(f==='archived'?e.status==='archived':e.status!=='archived')));body.innerHTML=list.map(e=>`<tr><td><b>${esc(e.name)}</b><div class="small">${esc(e.description||'')}</div></td><td>${dateFmt(e.startDate)}</td><td>${money(e.defaultFee)}</td><td><span class="pill ${e.status==='archived'?'red':'green'}">${e.status==='archived'?'Arsip':'Aktif'}</span></td><td><div class="actions"><button data-open-event="${e.id}">Buka</button><button class="secondary" data-edit-event="${e.id}">Ubah</button><button class="secondary" data-archive-event="${e.id}">${e.status==='archived'?'Aktifkan':'Arsipkan'}</button><button class="danger" data-delete-event="${e.id}">Hapus</button></div></td></tr>`).join('')||emptyRow(5,'Kegiatan tidak ditemukan.');body.querySelectorAll('[data-open-event]').forEach(b=>b.onclick=async()=>{try{await loadEventDetails(b.dataset.openEvent);setPage('finance');}catch(e){toast(errText(e));}});body.querySelectorAll('[data-edit-event]').forEach(b=>b.onclick=()=>openEventModal(events.find(e=>e.id===b.dataset.editEvent)));body.querySelectorAll('[data-archive-event]').forEach(b=>b.onclick=()=>toggleArchive(b.dataset.archiveEvent));body.querySelectorAll('[data-delete-event]').forEach(b=>b.onclick=()=>deleteEvent(b.dataset.deleteEvent));}
-function openModal(title,body,onSave,saveLabel='Simpan'){const root=$('#modalRoot');root.innerHTML=`<div class="modal-backdrop"><div class="modal"><h3>${title}</h3><form id="modalForm">${body}<div id="modalError" class="error"></div><div class="modal-foot"><button type="button" class="secondary" id="modalCancel">Batal</button><button type="submit">${saveLabel}</button></div></form></div></div>`;root.querySelector('#modalCancel').onclick=()=>root.innerHTML='';root.querySelector('.modal-backdrop').onclick=e=>{if(e.target.classList.contains('modal-backdrop'))root.innerHTML='';};root.querySelector('#modalForm').onsubmit=async e=>{e.preventDefault();const btn=root.querySelector('button[type=submit]');btn.disabled=true;try{await onSave(new FormData(e.target));root.innerHTML='';}catch(ex){root.querySelector('#modalError').textContent=errText(ex);btn.disabled=false;}};}
-function openEventModal(ev=null){openModal(ev?'Ubah kegiatan':'Tambah kegiatan',`<div class="field"><label>Nama kegiatan *</label><input name="name" required value="${esc(ev?.name||'')}" placeholder="Contoh: Rihlah Santri"></div><div class="field"><label>Deskripsi</label><textarea name="description" placeholder="Keterangan singkat">${esc(ev?.description||'')}</textarea></div><div class="formgrid"><div class="field"><label>Tanggal kegiatan</label><input name="startDate" type="date" value="${esc(ev?.startDate||today())}"></div><div class="field"><label>Batas pembayaran</label><input name="dueDate" type="date" value="${esc(ev?.dueDate||'')}"></div><div class="field"><label>Iuran per peserta (Rp)</label><input name="defaultFee" type="number" min="0" step="1000" required value="${Number(ev?.defaultFee||0)}"></div><div class="field"><label>Saldo awal (Rp)</label><input name="openingBalance" type="number" min="0" step="1000" value="${Number(ev?.openingBalance||0)}"></div></div>`,async f=>{const data={name:f.get('name').trim(),description:f.get('description').trim(),startDate:f.get('startDate')||'',dueDate:f.get('dueDate')||'',defaultFee:Number(f.get('defaultFee')||0),openingBalance:Number(f.get('openingBalance')||0),updatedAt:serverTimestamp()};if(!data.name)throw Error('Nama kegiatan wajib diisi.');if(ev)await updateDoc(eventRef(ev.id),data);else await addDoc(collection(db,'events'),{...data,status:'active',memberCount:0,cachedBalance:data.openingBalance,createdAt:serverTimestamp(),createdBy:currentUser.uid});await refresh();toast(ev?'Kegiatan diperbarui.':'Kegiatan ditambahkan.');});}
-async function toggleArchive(id){const ev=events.find(e=>e.id===id);if(!ev)return;if(!confirm(`${ev.status==='archived'?'Aktifkan kembali':'Arsipkan'} kegiatan "${ev.name}"?`))return;try{await updateDoc(eventRef(id),{status:ev.status==='archived'?'active':'archived',updatedAt:serverTimestamp()});await refresh();toast('Status kegiatan diperbarui.');}catch(e){toast(errText(e));}}
-async function deleteEvent(id){const ev=events.find(e=>e.id===id);if(!ev)return;if(!confirm(`Hapus kegiatan "${ev.name}" beserta semua peserta dan transaksi? Tindakan ini tidak dapat dibatalkan.`))return;if(!confirm('Konfirmasi terakhir: semua data di dalam kegiatan ini akan dihapus permanen. Lanjutkan?'))return;try{const [ms,ts]=await Promise.all([getDocs(memberCol(id)),getDocs(txCol(id))]);const all=[...ms.docs,...ts.docs];for(let i=0;i<all.length;i+=450){const batch=writeBatch(db);all.slice(i,i+450).forEach(d=>batch.delete(d.ref));await batch.commit();}await deleteDoc(eventRef(id));if(selectedEvent?.id===id){selectedEvent=null;members=[];transactions=[];}await refresh();toast('Kegiatan dan datanya dihapus.');}catch(e){toast(errText(e));}}
-function renderFinanceDetails(){const root=$('#financeDetails');if(!root||!selectedEvent)return;const st=eventStats({...selectedEvent,_members:members,_transactions:transactions});root.innerHTML=`<div class="cards">${stat('Saldo kas',money(st.balance))}${stat('Total pemasukan',money(st.incoming))}${stat('Pengeluaran',money(st.expenses))}${stat('Tunggakan iuran',money(st.arrears))}</div><div class="row" style="justify-content:space-between;margin-bottom:12px"><div><h3 style="margin:0">${esc(selectedEvent.name)}</h3><div class="small">${members.length} peserta · Iuran standar ${money(selectedEvent.defaultFee)}</div></div><div class="row"><button id="addMemberBtn" class="secondary">+ Peserta</button><button id="addTxBtn">+ Transaksi</button></div></div><div class="row" style="margin:0 0 16px"><button class="secondary" id="showMembersBtn">Daftar peserta & tunggakan</button><button class="secondary" id="receiptBtn">Kuitansi terakhir</button><button class="secondary" id="exportThisBtn">Ekspor CSV</button></div><div id="memberPanel" class="panel hidden"><div class="row" style="justify-content:space-between"><h3>Peserta kegiatan</h3><input id="memberSearch" class="grow" placeholder="Cari peserta…"></div><div class="table-wrap"><table><thead><tr><th>Nama peserta</th><th>Nominal iuran</th><th>Terbayar</th><th>Sisa</th><th>Aksi</th></tr></thead><tbody id="memberRows"></tbody></table></div></div><h3 style="margin:18px 0 12px;color:#123b63">Riwayat buku kas</h3><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Uraian</th><th>Jenis</th><th>Metode</th><th>Masuk</th><th>Keluar</th><th>Aksi</th></tr></thead><tbody>${transactions.map(t=>`<tr><td>${dateFmt(t.paymentDate)}</td><td><b>${esc(t.note||typeName(t.type))}</b><div class="small">${esc(memberName(t.memberId)||'')}</div>${t.status==='void'?'<span class="pill red">Dibatalkan</span>':''}</td><td>${typeName(t.type)}</td><td>${esc(t.method||'-')}</td><td>${t.type!=='expense'&&t.status!=='void'?money(t.amount):'-'}</td><td>${t.type==='expense'&&t.status!=='void'?money(t.amount):'-'}</td><td><div class="actions"><button class="secondary" data-edit-tx="${t.id}">Ubah</button><button class="danger" data-void-tx="${t.id}">${t.status==='void'?'Aktifkan':'Batalkan'}</button></div></td></tr>`).join('')||emptyRow(7,'Belum ada transaksi pada kegiatan ini.')}</tbody></table></div>`;
- $('#addMemberBtn').onclick=()=>openMemberModal();$('#addTxBtn').onclick=()=>openTransactionModal();$('#showMembersBtn').onclick=()=>{const p=$('#memberPanel');p.classList.toggle('hidden');renderMemberRows();};$('#receiptBtn').onclick=()=>{const last=transactions.find(t=>t.type==='payment'&&t.status!=='void');if(last)downloadReceipt(last);else toast('Belum ada pembayaran untuk dibuatkan kuitansi.');};$('#exportThisBtn').onclick=()=>exportEventTransactions(selectedEvent.id);$('#memberSearch').oninput=renderMemberRows;root.querySelectorAll('[data-edit-tx]').forEach(b=>b.onclick=()=>openTransactionModal(transactions.find(t=>t.id===b.dataset.editTx)));root.querySelectorAll('[data-void-tx]').forEach(b=>b.onclick=()=>toggleVoidTx(b.dataset.voidTx));renderMemberRows();}
-function typeName(t){return t==='payment'?'Iuran peserta':t==='income'?'Pemasukan lain':'Pengeluaran'}
+
+function renderEventRows(){
+  const body=$('#eventsRows'); if(!body)return;
+  const q=($('#eventSearch')?.value\vert{}\vert{}'').toLowerCase(), f=$('#eventFilter')?.value;
+  const list=events.filter(e=>(e.name||'').toLowerCase().includes(q)&&(f==='all'||(f==='archived'?e.status==='archived':e.status!=='archived')));
+  body.innerHTML=list.map(e=>`<tr>
+    <td><b>${esc(e.name)}</b><div class="small">${esc(e.description||'')}</div></td>
+    <td>${dateFmt(e.startDate)}</td>
+    <td>${money(e.defaultFee)}</td>
+    <td><span class="pill ${e.status==='archived'?'red':'green'}">${e.status==='archived'?'Arsip':'Aktif'}</span></td>
+    <td>
+      <div class="actions">
+        <button data-open-event="${e.id}">Kelola Kas</button>
+        <button class="secondary" data-edit-event="${e.id}">Edit</button>
+        <button class="secondary" data-archive-event="${e.id}">${e.status==='archived'?'Aktifkan':'Arsipkan'}</button>
+        <button class="danger" data-delete-event="${e.id}">Hapus</button>
+      </div>
+    </td>
+  </tr>`).join('')||emptyRow(5,'Kegiatan tidak ditemukan.');
+
+  body.querySelectorAll('[data-open-event]').forEach(b=>b.onclick=async()=>{try{await loadEventDetails(b.dataset.openEvent);setPage('finance');}catch(e){toast(errText(e));}});
+  body.querySelectorAll('[data-edit-event]').forEach(b=>b.onclick=()=>openEventModal(events.find(e=>e.id===b.dataset.editEvent)));
+  body.querySelectorAll('[data-archive-event]').forEach(b=>b.onclick=()=>toggleArchive(b.dataset.archiveEvent));
+  body.querySelectorAll('[data-delete-event]').forEach(b=>b.onclick=()=>deleteEvent(b.dataset.deleteEvent));
+}
+
+function renderFinanceDetails(){
+  const root=$('#financeDetails'); if(!root||!selectedEvent)return;
+  const incoming = transactions.filter(t=>t.status!=='void'&&t.type!=='expense').reduce((s,t)=>s+Number(t.amount||0),0);
+  const expenses = transactions.filter(t=>t.status!=='void'&&t.type==='expense').reduce((s,t)=>s+Number(t.amount||0),0);
+  const balance = Number(selectedEvent.openingBalance||0) + incoming - expenses;
+  const totalDue = members.reduce((s,m)=>s+Number(m.requiredAmount??selectedEvent.defaultFee??0),0);
+  const totalPaid = transactions.filter(t=>t.status!=='void'&&t.type==='payment').reduce((s,t)=>s+Number(t.amount||0),0);
+  const arrears = Math.max(0, totalDue - totalPaid);
+
+  root.innerHTML=`
+  <div class="cards">
+    ${stat('Saldo Kas Saat Ini',money(balance),'green')}
+    ${stat('Total Pemasukan',money(incoming))}
+    ${stat('Total Pengeluaran',money(expenses),'red')}
+    ${stat('Sisa Tunggakan Peserta',money(arrears),'yellow')}
+  </div>
+  <div class="row" style="justify-content:space-between;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:12px">
+    <div>
+      <h3 style="margin:0">${esc(selectedEvent.name)}</h3>
+      <div class="small">${members.length} Peserta Terdaftar · Iuran Acuan ${money(selectedEvent.defaultFee)}</div>
+    </div>
+    <div class="row">
+      <button id="addMemberBtn" class="secondary">+ Peserta</button>
+      <button id="uploadExcelBtn" class="secondary">📥 Import Excel</button>
+      <button id="addTxBtn">+ Transaksi Baru</button>
+    </div>
+  </div>
+
+  <div class="panel" style="background:#fafbfc">
+    <div class="row" style="justify-content:space-between;margin-bottom:10px">
+      <h3 style="margin:0">Daftar Peserta & Kartu Pembayaran</h3>
+      <input id="memberSearch" class="grow" style="max-width:240px" placeholder="Cari nama peserta…">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Nama Peserta</th><th>Wajib Iuran</th><th>Terbayar</th><th>Sisa</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody id="memberRows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row" style="justify-content:space-between;margin:18px 0 10px">
+    <h3 style="margin:0;color:var(--navy)">Riwayat Buku Kas</h3>
+    <button class="secondary" id="pdfQuickBku">📄 Unduh BKU PDF</button>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tanggal</th><th>Uraian / Peserta</th><th>Jenis</th><th>Metode</th><th>Pemasukan</th><th>Pengeluaran</th><th>Aksi</th></tr></thead>
+      <tbody>${transactions.map(t=>{
+        const isPay = t.type==='payment';
+        return `<tr>
+          <td>${dateFmt(t.paymentDate)}</td>
+          <td>
+            <b>${esc(t.note\vert{}\vert{}typeName(t.type))}</b>${t.memberId ? `<div class="small" style="color:var(--blue)">👤 ${esc(memberName(t.memberId))}</div>`:''}
+            ${t.status==='void'?'<span class="pill red">Dibatalkan</span>':''}
+          </td>
+          <td>${typeName(t.type)}</td>
+          <td>${esc(t.method||'-')}</td>
+          <td style="color:var(--green);font-weight:600">${t.type!=='expense'&&t.status!=='void'?money(t.amount):'-'}</td>
+          <td style="color:var(--red);font-weight:600">${t.type==='expense'&&t.status!=='void'?money(t.amount):'-'}</td>
+          <td>
+            <div class="actions">
+              ${isPay && t.status!=='void' ? `<button class="secondary" data-receipt-tx="${t.id}">🧾 Kuitansi</button>`:''}
+              <button class="secondary" data-edit-tx="${t.id}">Edit</button>
+              <button class="danger" data-void-tx="${t.id}">${t.status==='void'?'Aktifkan':'Batalkan'}</button>
+            </div>
+          </td>
+        </tr>`;
+      }).join('')||emptyRow(7,'Belum ada catatan transaksi pada kegiatan ini.')}
+      </tbody>
+    </table>
+  </div>`;
+
+  $('#addMemberBtn').onclick=()=>openMemberModal();
+  $('#uploadExcelBtn').onclick=()=>openExcelImportModal();
+  $('#addTxBtn').onclick=()=>openTransactionModal();
+  $('#pdfQuickBku').onclick=()=>generatePdfReport('bku',selectedEvent.id);
+  $('#memberSearch').oninput=renderMemberRows;
+
+  root.querySelectorAll('[data-receipt-tx]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.dataset.receiptTx));
+  root.querySelectorAll('[data-edit-tx]').forEach(b=>b.onclick=()=>openTransactionModal(transactions.find(t=>t.id===b.dataset.editTx)));
+  root.querySelectorAll('[data-void-tx]').forEach(b=>b.onclick=()=>toggleVoidTx(b.dataset.voidTx));
+
+  renderMemberRows();
+}
+
+function typeName(t){return t==='payment'?'Iuran Peserta':t==='income'?'Pemasukan Lain':'Pengeluaran'}
 function memberName(id){return members.find(m=>m.id===id)?.name||''}
-function renderMemberRows(){const body=$('#memberRows');if(!body)return;const q=($('#memberSearch')?.value||'').toLowerCase();body.innerHTML=members.filter(m=>m.name.toLowerCase().includes(q)).map(m=>{const paid=getPaid(m.id),due=Number(m.requiredAmount??selectedEvent.defaultFee??0);return `<tr><td><b>${esc(m.name)}</b><div class="small">${esc(m.phone||'')}</div></td><td>${money(due)}</td><td>${money(paid)}</td><td>${money(Math.max(0,due-paid))}${paid>due?'<div class="small">Kelebihan '+money(paid-due)+'</div>':''}</td><td><div class="actions"><button class="secondary" data-pay-member="${m.id}">Bayar</button><button class="secondary" data-edit-member="${m.id}">Ubah</button><button class="danger" data-del-member="${m.id}">Hapus</button></div></td></tr>`}).join('')||emptyRow(5,'Belum ada peserta.');body.querySelectorAll('[data-pay-member]').forEach(b=>b.onclick=()=>openTransactionModal(null,b.dataset.payMember));body.querySelectorAll('[data-edit-member]').forEach(b=>b.onclick=()=>openMemberModal(members.find(m=>m.id===b.dataset.editMember)));body.querySelectorAll('[data-del-member]').forEach(b=>b.onclick=()=>deleteMember(b.dataset.delMember));}
-function openMemberModal(m=null){if(!selectedEvent)return;openModal(m?'Ubah peserta':'Tambah peserta',`<div class="field"><label>Nama peserta *</label><input name="name" required value="${esc(m?.name||'')}"></div><div class="formgrid"><div class="field"><label>Nomor HP (opsional)</label><input name="phone" value="${esc(m?.phone||'')}"></div><div class="field"><label>Nominal iuran peserta (Rp)</label><input name="requiredAmount" type="number" min="0" step="1000" value="${Number(m?.requiredAmount??selectedEvent.defaultFee??0)}"></div></div><div class="field"><label>Catatan</label><textarea name="notes">${esc(m?.notes||'')}</textarea></div>`,async f=>{const data={name:f.get('name').trim(),phone:f.get('phone').trim(),requiredAmount:Number(f.get('requiredAmount')||0),notes:f.get('notes').trim(),updatedAt:serverTimestamp()};if(!data.name)throw Error('Nama peserta wajib diisi.');if(m)await updateDoc(doc(db,'events',selectedEvent.id,'members',m.id),data);else{await addDoc(memberCol(selectedEvent.id),{...data,createdAt:serverTimestamp()});await updateDoc(eventRef(selectedEvent.id),{memberCount:members.length+1,updatedAt:serverTimestamp()});}await loadEventDetails(selectedEvent.id);await refresh();setPage('finance');toast(m?'Data peserta diperbarui.':'Peserta ditambahkan.');});}
-async function deleteMember(id){const m=members.find(x=>x.id===id);if(!m)return;if(transactions.some(t=>t.memberId===id&&t.status!=='void')){if(!confirm('Peserta ini memiliki riwayat pembayaran. Hapus peserta saja? Transaksi tetap tersimpan sebagai riwayat.'))return;}else if(!confirm(`Hapus peserta ${m.name}?`))return;try{await deleteDoc(doc(db,'events',selectedEvent.id,'members',id));await updateDoc(eventRef(selectedEvent.id),{memberCount:Math.max(0,members.length-1),updatedAt:serverTimestamp()});await loadEventDetails(selectedEvent.id);await refresh();setPage('finance');toast('Peserta dihapus.');}catch(e){toast(errText(e));}}
-function openTransactionModal(t=null,memberId=''){if(!selectedEvent)return;const isPay=t?t.type==='payment':true;openModal(t?'Ubah transaksi':'Tambah transaksi',`<div class="field"><label>Jenis transaksi *</label><select name="type" id="txType"><option value="payment" ${(t?.type||'payment')==='payment'?'selected':''}>Pembayaran iuran peserta</option><option value="income" ${t?.type==='income'?'selected':''}>Pemasukan lain</option><option value="expense" ${t?.type==='expense'?'selected':''}>Pengeluaran</option></select></div><div class="field" id="memberField"><label>Peserta (untuk pembayaran iuran)</label><select name="memberId"><option value="">-- Pilih peserta --</option>${members.map(m=>`<option value="${m.id}" ${(t?.memberId||memberId)===m.id?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div><div class="formgrid"><div class="field"><label>Tanggal *</label><input name="paymentDate" type="date" required value="${esc(t?.paymentDate||today())}"></div><div class="field"><label>Jumlah (Rp) *</label><input name="amount" type="number" min="1" step="1" required value="${Number(t?.amount||'')}"></div><div class="field"><label>Metode</label><select name="method"><option value="cash" ${(t?.method||'cash')==='cash'?'selected':''}>Tunai</option><option value="transfer" ${t?.method==='transfer'?'selected':''}>Transfer</option><option value="other" ${t?.method==='other'?'selected':''}>Lainnya</option></select></div><div class="field"><label>Referensi/bukti (opsional)</label><input name="reference" value="${esc(t?.reference||'')}" placeholder="Contoh: transfer BCA"></div></div><div class="field"><label>Uraian/catatan *</label><textarea name="note" required>${esc(t?.note||(isPay?'Pembayaran iuran':''))}</textarea></div>${t?'<div class="notice">Perubahan transaksi akan dicatat pada riwayat perubahan di dokumen transaksi. Pastikan nominal dan tanggal benar.</div>':''}`,async f=>{const type=f.get('type'),amount=Number(f.get('amount'));if(!Number.isFinite(amount)||amount<=0)throw Error('Jumlah harus lebih dari nol.');if(type==='payment'&&!f.get('memberId'))throw Error('Pilih peserta untuk pembayaran iuran.');const data={type,memberId:type==='payment'?f.get('memberId'):'',paymentDate:f.get('paymentDate'),amount,method:f.get('method'),reference:f.get('reference').trim(),note:f.get('note').trim(),updatedAt:serverTimestamp(),updatedBy:currentUser.uid};if(!data.note)throw Error('Uraian wajib diisi.');if(t){await updateDoc(doc(db,'events',selectedEvent.id,'transactions',t.id),{...data,previousValue:{type:t.type,memberId:t.memberId||'',paymentDate:t.paymentDate,amount:t.amount,method:t.method||'',note:t.note||'',status:t.status||'active'},lastEditedAt:serverTimestamp()});}else{await addDoc(txCol(selectedEvent.id),{...data,status:'active',createdAt:serverTimestamp(),createdBy:currentUser.uid});}await loadEventDetails(selectedEvent.id);await refresh();setPage('finance');toast(t?'Transaksi diperbarui.':'Transaksi dicatat.');});const typeSel=$('#txType');const memberField=$('#memberField');const updateField=()=>memberField.classList.toggle('hidden',typeSel.value!=='payment');typeSel.onchange=updateField;updateField();}
-async function toggleVoidTx(id){const t=transactions.find(x=>x.id===id);if(!t)return;const next=t.status==='void'?'active':'void';if(!confirm(next==='void'?'Batalkan transaksi ini? Riwayatnya tetap disimpan.':'Aktifkan kembali transaksi ini?'))return;try{await updateDoc(doc(db,'events',selectedEvent.id,'transactions',id),{status:next,updatedAt:serverTimestamp(),updatedBy:currentUser.uid});await loadEventDetails(selectedEvent.id);await refresh();setPage('finance');toast('Status transaksi diperbarui.');}catch(e){toast(errText(e));}}
-async function exportSelected(kind){const id=$('#reportEvent')?.value;if(!id){toast('Pilih kegiatan terlebih dahulu.');return;}try{await loadEventDetails(id);if(kind==='tx')exportEventTransactions(id);else exportMembersCSV();}catch(e){toast(errText(e));}}
-function downloadCSV(filename,rows){const csv=rows.map(row=>row.map(v=>{let s=String(v??'');if(/^[=+\-@]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}).join(';')).join('\r\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);}
-function exportEventTransactions(id){if(!selectedEvent||selectedEvent.id!==id){toast('Buka kegiatan terlebih dahulu dari menu Buku Kas.');return;}const rows=[['Tanggal','Nama Kegiatan','Jenis','Uraian','Nama Peserta','Metode','Pemasukan (Rp)','Pengeluaran (Rp)','Status','Referensi']];let balance=Number(selectedEvent.openingBalance||0);const sorted=[...transactions].sort((a,b)=>(a.paymentDate||'').localeCompare(b.paymentDate||''));rows.push([selectedEvent.startDate||'',selectedEvent.name,'Saldo awal','Saldo awal kegiatan','','',balance,0,'Aktif','']);for(const t of sorted){const valid=t.status!=='void';const masuk=valid&&t.type!=='expense'?Number(t.amount):0,keluar=valid&&t.type==='expense'?Number(t.amount):0;balance+=masuk-keluar;rows.push([t.paymentDate,selectedEvent.name,typeName(t.type),t.note,memberName(t.memberId),t.method,masuk,keluar,t.status==='void'?'Dibatalkan':'Aktif',t.reference||'']);}rows.push(['','','','','','TOTAL',balance,0,'Saldo akhir','']);downloadCSV('BKU-'+slug(selectedEvent.name)+'.csv',rows);toast('File CSV dibuat.');}
-function exportMembersCSV(){if(!selectedEvent)return;const rows=[['Nama peserta','Nomor HP','Iuran wajib (Rp)','Sudah dibayar (Rp)','Sisa (Rp)','Catatan']];members.forEach(m=>{const due=Number(m.requiredAmount??selectedEvent.defaultFee??0),paid=getPaid(m.id);rows.push([m.name,m.phone,due,paid,Math.max(0,due-paid),m.notes]);});downloadCSV('Peserta-'+slug(selectedEvent.name)+'.csv',rows);toast('Daftar peserta diekspor.');}
-function slug(s){return String(s||'kegiatan').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'kegiatan';}
-async function downloadReceipt(t){const m=members.find(x=>x.id===t.memberId);const wrap=document.createElement('div');wrap.style.cssText='position:fixed;left:-9999px;top:0;width:720px;padding:34px;background:white;color:#123b63;font-family:Arial,sans-serif;border:3px solid #123b63';wrap.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #f4c84a;padding-bottom:18px"><div><div style="font-size:27px;font-weight:800">KUITANSI PEMBAYARAN</div><div style="font-size:14px;margin-top:5px">${esc(selectedEvent?.name||'Kegiatan')}</div></div><div style="background:#f4c84a;border-radius:12px;padding:12px 16px;font-weight:800">MI</div></div><div style="padding:24px 0;font-size:17px;line-height:2"><div>No. transaksi: <b>${esc(t.id.slice(-8).toUpperCase())}</b></div><div>Telah diterima dari: <b>${esc(m?.name||'Peserta')}</b></div><div>Jumlah: <b style="font-size:23px">${money(t.amount)}</b></div><div>Terbilang: <b>${esc(terbilang(Number(t.amount)))} rupiah</b></div><div>Untuk pembayaran: <b>${esc(t.note||'Iuran kegiatan')}</b></div><div>Tanggal: <b>${dateFmt(t.paymentDate)}</b></div><div>Metode: <b>${t.method==='transfer'?'Transfer':t.method==='cash'?'Tunai':'Lainnya'}</b></div></div><div style="display:flex;justify-content:space-between;align-items:end;border-top:1px solid #cbd5e1;padding-top:18px"><div style="font-size:12px;color:#64748b">Simpan kuitansi ini sebagai bukti pembayaran.</div><div style="text-align:center;width:190px">Penerima,<br><br><br><b>Admin/Bendahara</b></div></div>`;document.body.appendChild(wrap);try{const canvas=await window.html2canvas(wrap,{scale:2,backgroundColor:'#ffffff'});const a=document.createElement('a');a.download='Kuitansi-'+slug(m?.name||'peserta')+'-'+t.id.slice(-6)+'.png';a.href=canvas.toDataURL('image/png');a.click();}catch(e){toast('Gagal membuat kuitansi. Periksa koneksi internet.');}finally{wrap.remove();}}
-function terbilang(n){if(n===0)return'nol';const a=['','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan','sepuluh','sebelas'];function words(x){if(x<12)return a[x];if(x<20)return words(x-10)+' belas';if(x<100)return words(Math.floor(x/10))+' puluh '+words(x%10);if(x<200)return 'seratus '+words(x-100);if(x<1000)return words(Math.floor(x/100))+' ratus '+words(x%100);if(x<2000)return 'seribu '+words(x-1000);if(x<1e6)return words(Math.floor(x/1000))+' ribu '+words(x%1000);if(x<1e9)return words(Math.floor(x/1e6))+' juta '+words(x%1e6);return String(x)}return words(Math.floor(n)).replace(/\s+/g,' ').trim();}
-$('#loginForm').addEventListener('submit',async e=>{e.preventDefault();$('#loginError').textContent='';try{await signInWithEmailAndPassword(auth,$('#email').value.trim(),$('#password').value);}catch(ex){$('#loginError').textContent=errText(ex);}});
+
+function renderMemberRows(){
+  const body=$('#memberRows'); if(!body)return;
+  const q=($('#memberSearch')?.value||'').toLowerCase();
+  const filtered = members.filter(m=>m.name.toLowerCase().includes(q));
+
+  body.innerHTML=filtered.map(m=>{
+    const paid=getPaid(m.id);
+    const due=Number(m.requiredAmount??selectedEvent.defaultFee??0);
+    const sisa=Math.max(0,due-paid);
+    const isLunas = paid >= due;
+
+    return `<tr>
+      <td><b>${esc(m.name)}</b><div class="small">${esc(m.phone||'-')}</div></td>
+      <td>${money(due)}</td>
+      <td style="color:var(--green);font-weight:600">${money(paid)}</td>
+      <td style="color:${sisa>0?'var(--red)':'var(--muted)'}">${money(sisa)}</td>
+      <td><span class="pill ${isLunas?'green':'yellow'}">${isLunas?'LUNAS':'BELUM LUNAS'}</span></td>
+      <td>
+        <div class="actions">
+          <button data-pay-member="${m.id}">Bayar</button>
+          <button class="secondary" data-card-member="${m.id}">📇 Riwayat</button>
+          <button class="secondary" data-edit-member="${m.id}">Edit</button>
+          <button class="danger" data-del-member="${m.id}">Hapus</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('')||emptyRow(6,'Peserta tidak ditemukan.');
+
+  body.querySelectorAll('[data-pay-member]').forEach(b=>b.onclick=()=>openTransactionModal(null,b.dataset.payMember));
+  body.querySelectorAll('[data-card-member]').forEach(b=>b.onclick=()=>openMemberCardModal(b.dataset.cardMember));
+  body.querySelectorAll('[data-edit-member]').forEach(b=>b.onclick=()=>openMemberModal(members.find(m=>m.id===b.dataset.editMember)));
+  body.querySelectorAll('[data-del-member]').forEach(b=>b.onclick=()=>deleteMember(b.dataset.delMember));
+}
+
+function openModal(title,bodyHtml,onSave,saveLabel='Simpan'){
+  const root=$('#modalRoot');
+  root.innerHTML=`<div class="modal-backdrop"><div class="modal"><h3>${title}</h3><form id="modalForm">${bodyHtml}<div id="modalError" class="error"></div><div class="modal-foot"><button type="button" class="secondary" id="modalCancel">Batal</button><button type="submit">${saveLabel}</button></div></form></div></div>`;
+  root.querySelector('#modalCancel').onclick=()=>root.innerHTML='';
+  root.querySelector('.modal-backdrop').onclick=e=>{if(e.target.classList.contains('modal-backdrop'))root.innerHTML='';};
+  root.querySelector('#modalForm').onsubmit=async e=>{
+    e.preventDefault();
+    const btn=root.querySelector('button[type=submit]');
+    btn.disabled=true;
+    showLoading('Menyimpan data…');
+    try{ await onSave(new FormData(e.target)); root.innerHTML=''; }
+    catch(ex){ root.querySelector('#modalError').textContent=errText(ex); btn.disabled=false; }
+    finally{ hideLoading(); }
+  };
+}
+
+function openEventModal(ev=null){
+  openModal(ev?'Edit Kegiatan':'Tambah Kegiatan Baru',`
+    <div class="field"><label>Nama Kegiatan *</label><input name="name" required value="${esc(ev?.name||'')}" placeholder="Contoh: Rihlah Santri 2026"></div>
+    <div class="field"><label>Deskripsi Keterangan</label><textarea name="description" placeholder="Catatan singkat kegiatan">${esc(ev?.description||'')}</textarea></div>
+    <div class="formgrid">
+      <div class="field"><label>Tanggal Kegiatan</label><input name="startDate" type="date" value="${esc(ev?.startDate||today())}"></div>
+      <div class="field"><label>Batas Waktu Pembayaran</label><input name="dueDate" type="date" value="${esc(ev?.dueDate||'')}"></div>
+      <div class="field"><label>Iuran Standar per Peserta (Rp)</label><input name="defaultFee" type="number" min="0" step="1000" required value="${Number(ev?.defaultFee||0)}"></div>
+      <div class="field"><label>Saldo Awal Kas (Rp)</label><input name="openingBalance" type="number" min="0" step="1000" value="${Number(ev?.openingBalance||0)}"></div>
+    </div>`,
+    async f=>{
+      const data={name:f.get('name').trim(),description:f.get('description').trim(),startDate:f.get('startDate')||'',dueDate:f.get('dueDate')||'',defaultFee:Number(f.get('defaultFee')||0),openingBalance:Number(f.get('openingBalance')||0),updatedAt:serverTimestamp()};
+      if(!data.name)throw Error('Nama kegiatan wajib diisi.');
+      if(ev) await updateDoc(eventRef(ev.id),data);
+      else await addDoc(collection(db,'events'),{...data,status:'active',memberCount:0,cachedBalance:data.openingBalance,createdAt:serverTimestamp(),createdBy:currentUser.uid});
+      await refresh(); toast(ev?'Kegiatan diperbarui.':'Kegiatan baru dibuat.');
+    }
+  );
+}
+
+function openMemberModal(m=null){
+  if(!selectedEvent)return;
+  openModal(m?'Edit Peserta':'Tambah Peserta',`
+    <div class="field"><label>Nama Lengkap Peserta *</label><input name="name" required value="${esc(m?.name||'')}"></div>
+    <div class="formgrid">
+      <div class="field"><label>Nomor HP / WhatsApp</label><input name="phone" value="${esc(m?.phone||'')}"></div>
+      <div class="field"><label>Nominal Wajib Iuran (Rp)</label><input name="requiredAmount" type="number" min="0" step="1000" value="${Number(m?.requiredAmount??selectedEvent.defaultFee??0)}"></div>
+    </div>
+    <div class="field"><label>Catatan Tambahan</label><textarea name="notes">${esc(m?.notes||'')}</textarea></div>`,
+    async f=>{
+      const data={name:f.get('name').trim(),phone:f.get('phone').trim(),requiredAmount:Number(f.get('requiredAmount')||0),notes:f.get('notes').trim(),updatedAt:serverTimestamp()};
+      if(!data.name)throw Error('Nama peserta wajib diisi.');
+      if(m) await updateDoc(doc(db,'events',selectedEvent.id,'members',m.id),data);
+      else{ await addDoc(memberCol(selectedEvent.id),{...data,createdAt:serverTimestamp()}); await updateDoc(eventRef(selectedEvent.id),{memberCount:members.length+1,updatedAt:serverTimestamp()}); }
+      await loadEventDetails(selectedEvent.id); await refresh(); setPage('finance'); toast('Data peserta disimpan.');
+    }
+  );
+}
+
+function openExcelImportModal(){
+  if(!selectedEvent)return;
+  const root=$('#modalRoot');
+  root.innerHTML=`<div class="modal-backdrop"><div class="modal">
+    <h3>Import Peserta dari Excel / CSV</h3>
+    <p class="small">Pilih file Excel (.xlsx, .xls) atau .csv. Pastikan ada kolom nama peserta.</p>
+    <div class="field"><label>Pilih File Excel / CSV</label><input type="file" id="excelFileInput" accept=".xlsx, .xls, .csv"></div>
+    <div id="excelPreview" style="margin-top:10px;max-height:200px;overflow:auto" class="small"></div>
+    <div id="excelModalErr" class="error"></div>
+    <div class="modal-foot">
+      <button type="button" class="secondary" id="modalCancel">Batal</button>
+      <button type="button" id="startImportBtn" disabled>Import Data</button>
+    </div>
+  </div></div>`;
+
+  root.querySelector('#modalCancel').onclick=()=>root.innerHTML='';
+  let parsedRows = [];
+
+  $('#excelFileInput').onchange = e => {
+    const file = e.target.files[0];
+    if(!file)return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = new Uint8Array(ev.target.result);
+        const workbook = XLSX.read(data, {type: 'array'});
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const json = XLSX.utils.sheet_to_json(sheet, {defval:''});
+        
+        parsedRows = json.map(r=>{
+          const keys = Object.keys(r);
+          const nameKey = keys.find(k=>/nama|name|peserta/i.test(k)) || keys[0];
+          const phoneKey = keys.find(k=>/hp|phone|wa|telepon/i.test(k));
+          const feeKey = keys.find(k=>/iuran|nominal|wajib|fee/i.test(k));
+          return {
+            name: String(r[nameKey]||'').trim(),
+            phone: phoneKey ? String(r[phoneKey]||'').trim() : '',
+            requiredAmount: feeKey && !isNaN(Number(r[feeKey])) ? Number(r[feeKey]) : Number(selectedEvent.defaultFee||0)
+          };
+        }).filter(r=>r.name);
+
+        if(parsedRows.length===0){ throw new Error('Tidak ada data peserta ber-nama yang ditemukan.'); }
+
+        $('#excelPreview').innerHTML = `<b>Terbaca ${parsedRows.length} peserta:</b><br>` + parsedRows.slice(0,5).map(p=>`• ${p.name} (${p.phone||'no HP'}) - ${money(p.requiredAmount)}`).join('<br>') + (parsedRows.length>5 ? `<br>...dan ${parsedRows.length-5} lainnya` : '');
+        $('#startImportBtn').disabled = false;
+        $('#excelModalErr').textContent = '';
+      } catch(ex){
+        $('#excelModalErr').textContent = 'Gagal membaca file: ' + ex.message;
+        $('#startImportBtn').disabled = true;
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
+
+  $('#startImportBtn').onclick = async () => {
+    if(!parsedRows.length) return;
+    showLoading(`Mengimport ${parsedRows.length} peserta…`);
+    try {
+      const colRef = memberCol(selectedEvent.id);
+      for(let i=0; i<parsedRows.length; i+=400){
+        const batch = writeBatch(db);
+        parsedRows.slice(i, i+400).forEach(m=>{
+          const docRef = doc(colRef);
+          batch.set(docRef, {...m, notes:'Import Excel', createdAt:serverTimestamp()});
+        });
+        await batch.commit();
+      }
+      await updateDoc(eventRef(selectedEvent.id),{memberCount: members.length + parsedRows.length, updatedAt:serverTimestamp()});
+      root.innerHTML='';
+      await loadEventDetails(selectedEvent.id);
+      await refresh();
+      setPage('finance');
+      toast(`Berhasil mengimport ${parsedRows.length} peserta!`);
+    } catch(ex){
+      $('#excelModalErr').textContent = errText(ex);
+    } finally { hideLoading(); }
+  };
+}
+
+function openMemberCardModal(memberId){
+  const m = members.find(x=>x.id===memberId);
+  if(!m)return;
+  const payList = getMemberPayments(memberId);
+  const totalPaid = payList.reduce((s,t)=>s+Number(t.amount||0),0);
+  const due = Number(m.requiredAmount??selectedEvent.defaultFee??0);
+  const sisa = Math.max(0, due - totalPaid);
+  const isLunas = totalPaid >= due;
+
+  const root=$('#modalRoot');
+  root.innerHTML=`<div class="modal-backdrop"><div class="modal" style="width:min(100%,600px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--navy);padding-bottom:10px">
+      <div>
+        <h3 style="margin:0;color:var(--navy)">KARTU RIWAYAT PEMBAYARAN</h3>
+        <div class="small">${esc(selectedEvent.name)}</div>
+      </div>
+      <span class="pill ${isLunas?'green':'red'}" style="font-size:12px;padding:5px 12px">${isLunas?'LUNAS':'BELUM LUNAS'}</span>
+    </div>
+    
+    <div style="margin:14px 0;line-height:1.6;font-size:13px" class="panel">
+      <div>Nama Peserta: <b>${esc(m.name)}</b></div>
+      <div>No. HP / WA: <b>${esc(m.phone||'-')}</b></div>
+      <div>Total Wajib Iuran: <b>${money(due)}</b></div>
+      <div>Total Terbayar: <b style="color:var(--green)">${money(totalPaid)}</b></div>
+      <div>Sisa Tunggakan: <b style="color:${sisa>0?'var(--red)':'var(--muted)'}">${money(sisa)}</b></div>
+    </div>
+
+    <h4 style="margin:12px 0 6px">Riwayat Angsuran / Pembayaran:</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ke-</th><th>Tanggal</th><th>Nominal</th><th>Metode / Ref</th><th>Kuitansi</th></tr></thead>
+        <tbody>${payList.map((t,idx)=>`
+          <tr>
+            <td><b>#${idx+1}</b></td>
+            <td>${dateFmt(t.paymentDate)}</td>
+            <td style="font-weight:700;color:var(--green)">${money(t.amount)}</td>
+            <td>${esc(t.method\vert{}\vert{}'-')}${t.reference?`(${esc(t.reference)})`:''}</td>
+            <td><button class="secondary" style="padding:4px 8px;font-size:11px" data-dl-receipt="${t.id}">🧾 Kuitansi ke-${idx+1}</button></td>
+          </tr>`).join('')||emptyRow(5,'Belum ada catatan pembayaran.')}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-foot" style="justify-content:space-between">
+      <button type="button" class="secondary" id="cardPdfBtn">📄 Cetak Kartu PDF</button>
+      <button type="button" class="secondary" id="closeModal">Tutup</button>
+    </div>
+  </div></div>`;
+
+  root.querySelector('#closeModal').onclick=()=>root.innerHTML='';
+  root.querySelectorAll('[data-dl-receipt]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.dataset.dl-receipt));
+  root.querySelector('#cardPdfBtn').onclick=()=>downloadMemberCardPdf(m, payList, due, totalPaid, sisa, isLunas);
+}
+
+function openTransactionModal(t=null,memberId=''){
+  if(!selectedEvent)return;
+  const isPay=t?t.type==='payment':true;
+  openModal(t?'Edit Transaksi':'Tambah Transaksi',`
+    <div class="field"><label>Jenis Transaksi *</label>
+      <select name="type" id="txType">
+        <option value="payment" ${(t?.type||'payment')==='payment'?'selected':''}>Pembayaran Iuran Peserta</option>
+        <option value="income" ${t?.type==='income'?'selected':''}>Pemasukan Lain</option>
+        <option value="expense" ${t?.type==='expense'?'selected':''}>Pengeluaran</option>
+      </select>
+    </div>
+    <div class="field" id="memberField">
+      <label>Pilih Peserta *</label>
+      <select name="memberId">
+        <option value="">-- Pilih Peserta --</option>
+        ${members.map(m=>`<option value="${m.id}" ${(t?.memberId\vert{}\vert{}memberId)===m.id?'selected':''}>${esc(m.name)} (${money(getPaid(m.id))} /${money(m.requiredAmount??selectedEvent.defaultFee)})</option>`).join('')}
+      </select>
+    </div>
+    <div class="formgrid">
+      <div class="field"><label>Tanggal *</label><input name="paymentDate" type="date" required value="${esc(t?.paymentDate||today())}"></div>
+      <div class="field"><label>Jumlah Nominal (Rp) *</label><input name="amount" type="number" min="1" step="1" required value="${Number(t?.amount||'')}"></div>
+      <div class="field"><label>Metode Pembayaran</label>
+        <select name="method">
+          <option value="Tunai" ${(t?.method||'Tunai')==='Tunai'?'selected':''}>Tunai</option>
+          <option value="Transfer" ${t?.method==='Transfer'?'selected':''}>Transfer Bank / QRIS</option>
+          <option value="Lainnya" ${t?.method==='Lainnya'?'selected':''}>Lainnya</option>
+        </select>
+      </div>
+      <div class="field"><label>Referensi / Bukti (opsional)</label><input name="reference" value="${esc(t?.reference||'')}" placeholder="Contoh: Transfer BCA"></div>
+    </div>
+    <div class="field"><label>Catatan / Uraian *</label><textarea name="note" required>${esc(t?.note||(isPay?'Pembayaran iuran':''))}</textarea></div>`,
+    async f=>{
+      const type=f.get('type'), amount=Number(f.get('amount'));
+      if(!Number.isFinite(amount)||amount<=0)throw Error('Jumlah harus lebih dari nol.');
+      if(type==='payment'&&!f.get('memberId'))throw Error('Pilih peserta untuk pembayaran iuran.');
+      const data={type,memberId:type==='payment'?f.get('memberId'):'',paymentDate:f.get('paymentDate'),amount,method:f.get('method'),reference:f.get('reference').trim(),note:f.get('note').trim(),updatedAt:serverTimestamp(),updatedBy:currentUser.uid};
+      if(t) await updateDoc(doc(db,'events',selectedEvent.id,'transactions',t.id),data);
+      else await addDoc(txCol(selectedEvent.id),{...data,status:'active',createdAt:serverTimestamp(),createdBy:currentUser.uid});
+      await loadEventDetails(selectedEvent.id); await refresh(); setPage('finance'); toast(t?'Transaksi diperbarui.':'Transaksi berhasil dicatat.');
+    }
+  );
+  const typeSel=$('#txType'), memberField=$('#memberField');
+  const updateF=()=>memberField.classList.toggle('hidden',typeSel.value!=='payment');
+  typeSel.onchange=updateF; updateF();
+}
+
+async function toggleArchive(id){
+  const ev=events.find(e=>e.id===id); if(!ev)return;
+  if(!confirm(`${ev.status==='archived'?'Aktifkan kembali':'Arsipkan'} kegiatan "${ev.name}"?`))return;
+  showLoading('Memproses status kegiatan…');
+  try{ await updateDoc(eventRef(id),{status:ev.status==='archived'?'active':'archived',updatedAt:serverTimestamp()}); await refresh(); toast('Status kegiatan diperbarui.'); }
+  catch(e){toast(errText(e));} finally { hideLoading(); }
+}
+
+async function deleteEvent(id){
+  const ev=events.find(e=>e.id===id); if(!ev)return;
+  if(!confirm(`Hapus permanen kegiatan "${ev.name}" beserta seluruh data peserta & transaksinya?`))return;
+  showLoading('Menghapus kegiatan…');
+  try{
+    const [ms,ts]=await Promise.all([getDocs(memberCol(id)),getDocs(txCol(id))]);
+    const all=[...ms.docs,...ts.docs];
+    for(let i=0;i<all.length;i+=400){ const batch=writeBatch(db); all.slice(i,i+400).forEach(d=>batch.delete(d.ref)); await batch.commit(); }
+    await deleteDoc(eventRef(id));
+    if(selectedEvent?.id===id){selectedEvent=null;members=[];transactions=[];}
+    await refresh(); toast('Kegiatan berhasil dihapus.');
+  } catch(e){toast(errText(e));} finally { hideLoading(); }
+}
+
+async function deleteMember(id){
+  const m=members.find(x=>x.id===id); if(!m)return;
+  if(!confirm(`Hapus peserta ${m.name}? Transaksi yang pernah dicatat tetap tersimpan.`))return;
+  showLoading('Menghapus peserta…');
+  try{
+    await deleteDoc(doc(db,'events',selectedEvent.id,'members',id));
+    await updateDoc(eventRef(selectedEvent.id),{memberCount:Math.max(0,members.length-1),updatedAt:serverTimestamp()});
+    await loadEventDetails(selectedEvent.id); await refresh(); setPage('finance'); toast('Peserta dihapus.');
+  } catch(e){toast(errText(e));} finally { hideLoading(); }
+}
+
+async function toggleVoidTx(id){
+  const t=transactions.find(x=>x.id===id); if(!t)return;
+  const next=t.status==='void'?'active':'void';
+  if(!confirm(next==='void'?'Batalkan transaksi ini?':'Aktifkan kembali transaksi ini?'))return;
+  showLoading('Mengubah status transaksi…');
+  try{
+    await updateDoc(doc(db,'events',selectedEvent.id,'transactions',id),{status:next,updatedAt:serverTimestamp()});
+    await loadEventDetails(selectedEvent.id); await refresh(); setPage('finance'); toast('Status transaksi diperbarui.');
+  } catch(e){toast(errText(e));} finally { hideLoading(); }
+}
+
+async function downloadSingleTxReceipt(txId){
+  const t = transactions.find(x=>x.id===txId); if(!t)return;
+  const m = members.find(x=>x.id===t.memberId);
+  const payList = getMemberPayments(t.memberId);
+  const seqIndex = payList.findIndex(x=>x.id===txId) + 1;
+  const totalPaid = payList.reduce((s,x)=>s+Number(x.amount||0),0);
+  const due = Number(m?.requiredAmount??selectedEvent.defaultFee??0);
+  const sisa = Math.max(0, due - totalPaid);
+  const isLunas = totalPaid >= due;
+
+  showLoading('Membuat file Kuitansi…');
+  try {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:fixed;left:-9999px;top:0;width:680px;padding:30px;background:white;color:#123b63;font-family:Arial,sans-serif;border:3px solid #123b63;border-radius:12px';
+    wrap.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #f4c84a;padding-bottom:14px">
+        <div>
+          <div style="font-size:24px;font-weight:900">KUITANSI PEMBAYARAN</div>
+          <div style="font-size:13px;margin-top:2px;color:#475569">${esc(selectedEvent?.name||'Kegiatan')}</div>
+        </div>
+        <div style="background:#f4c84a;color:#123b63;border-radius:10px;padding:8px 14px;font-weight:900;font-size:18px">MI</div>
+      </div>
+      <div style="padding:20px 0;font-size:15px;line-height:1.9">
+        <div>No. Kuitansi: <b>KW-${t.id.slice(-6).toUpperCase()}</b></div>
+        <div>Telah diterima dari: <b style="font-size:17px;color:#123b63">${esc(m?.name||'Peserta')}</b></div>
+        <div>Pembayaran Ke: <b>Ke-${seqIndex||1}</b></div>
+        <div>Jumlah Pembayaran: <b style="font-size:20px;color:#137547">${money(t.amount)}</b></div>
+        <div>Terbilang: <i style="text-transform:capitalize">${terbilang(Number(t.amount))} rupiah</i></div>
+        <div>Untuk Keterangan: <b>${esc(t.note||'Iuran Kegiatan')}</b></div>
+        <div>Tanggal & Metode: <b>${dateFmt(t.paymentDate)} (${t.method||'Tunai'})</b></div>
+        <div style="margin-top:8px;padding:8px 12px;background:${isLunas?'#e7f8ef':'#fff0ef'};border-radius:8px;display:inline-block">
+          Status Iuran Peserta: <b style="color:${isLunas?'#137547':'#b42318'}">${isLunas?'LUNAS':'BELUM LUNAS (Sisa: '+money(sisa)+')'}</b>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px dashed #cbd5e1;padding-top:14px">
+        <div style="font-size:11px;color:#64748b">Simpan kuitansi ini sebagai bukti pembayaran resmi.</div>
+        <div style="text-align:center;width:180px;font-size:13px">
+          Penerima / Bendahara,<br><br><br><b>( Admin Keuangan )</b>
+        </div>
+      </div>`;
+    document.body.appendChild(wrap);
+    const canvas = await window.html2canvas(wrap, {scale:2, backgroundColor:'#ffffff'});
+    wrap.remove();
+    const a = document.createElement('a');
+    a.download = `Kuitansi-${slug(m?.name||'peserta')}-ke${seqIndex||1}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+    toast('Kuitansi berhasil diunduh.');
+  } catch(e){ toast('Gagal membuat kuitansi.'); }
+  finally { hideLoading(); }
+}
+
+function downloadMemberCardPdf(m, payList, due, totalPaid, sisa, isLunas){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'mm', format:'a4'});
+
+  doc.setFontSize(16); doc.setTextColor(18, 59, 99); doc.text("KARTU RIWAYAT PEMBAYARAN IURAN", 14, 15);
+  doc.setFontSize(10); doc.setTextColor(100); doc.text(`Kegiatan: ${selectedEvent?.name||''}`, 14, 21);
+
+  doc.setLineWidth(0.5); doc.setDrawColor(18, 59, 99); doc.line(14, 24, 196, 24);
+
+  doc.setFontSize(10); doc.setTextColor(30);
+  doc.text(`Nama Peserta : ${m.name}`, 14, 32);
+  doc.text(`No. HP / WA  : ${m.phone||'-'}`, 14, 38);
+  doc.text(`Total Wajib  : ${money(due)}`, 14, 44);
+
+  doc.text(`Total Terbayar : ${money(totalPaid)}`, 110, 32);
+  doc.text(`Sisa Tunggakan : ${money(sisa)}`, 110, 38);
+  doc.text(`Status Iuran   : ${isLunas?'LUNAS':'BELUM LUNAS'}`, 110, 44);
+
+  const tableData = payList.map((t, idx) => [
+    `#${idx+1}`,
+    dateFmt(t.paymentDate),
+    money(t.amount),
+    t.method||'Tunai',
+    t.note||'Pembayaran iuran'
+  ]);
+
+  doc.autoTable({
+    startY: 50,
+    head: [['Ke-', 'Tanggal', 'Nominal', 'Metode', 'Uraian / Catatan']],
+    body: tableData,
+    theme: 'grid',
+    headStyles: { fillColor: [18, 59, 99], fontSize: 9, fontStyle: 'bold' },
+    styles: { fontSize: 8, cellPadding: 2.5 },
+    margin: { left: 14, right: 14 }
+  });
+
+  doc.save(`Kartu-Riwayat-${slug(m.name)}.pdf`);
+  toast('Kartu Riwayat PDF diunduh.');
+}
+
+async function generatePdfReport(type, evId=null){
+  const targetId = evId || $('#reportEvent')?.value || selectedEvent?.id;
+  if(!targetId){ toast('Pilih kegiatan terlebih dahulu.'); return; }
+
+  showLoading('Membuat file PDF Laporan…');
+  try {
+    if(!selectedEvent || selectedEvent.id !== targetId){ await loadEventDetails(targetId); }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({orientation:'p', unit:'mm', format:'a4'});
+
+    if(type==='bku'){
+      doc.setFontSize(15); doc.setTextColor(18, 59, 99); doc.text("LAPORAN BUKU KAS UMUM (BKU)", 14, 15);
+      doc.setFontSize(10); doc.setTextColor(100); doc.text(`Kegiatan: ${selectedEvent.name} | Tanggal Cetak: ${dateFmt(today())}`, 14, 21);
+      doc.line(14, 23, 196, 23);
+
+      let runBalance = Number(selectedEvent.openingBalance||0);
+      const sorted = [...transactions].sort((a,b)=>(a.paymentDate||'').localeCompare(b.paymentDate||''));
+      const rows = [
+        ['-', selectedEvent.startDate||'-', 'Saldo Awal Kegiatan', '-', '-', '-', money(runBalance)]
+      ];
+
+      sorted.forEach((t, i) => {
+        if(t.status==='void') return;
+        const masuk = t.type!=='expense' ? Number(t.amount) : 0;
+        const keluar = t.type==='expense' ? Number(t.amount) : 0;
+        runBalance += (masuk - keluar);
+        rows.push([
+          i+1,
+          dateFmt(t.paymentDate),
+          t.note || typeName(t.type),
+          t.memberId ? memberName(t.memberId) : '-',
+          masuk > 0 ? money(masuk) : '-',
+          keluar > 0 ? money(keluar) : '-',
+          money(runBalance)
+        ]);
+      });
+
+      doc.autoTable({
+        startY: 27,
+        head: [['No', 'Tanggal', 'Uraian Transaksi', 'Peserta', 'Masuk', 'Keluar', 'Saldo']],
+        body: rows,
+        theme: 'striped',
+        headStyles: { fillColor: [18, 59, 99], fontSize: 8, fontStyle: 'bold' },
+        styles: { fontSize: 7.5, cellPadding: 2 },
+        columnStyles: { 0:{cellWidth:8}, 1:{cellWidth:22}, 2:{cellWidth:50}, 3:{cellWidth:35}, 4:{cellWidth:25}, 5:{cellWidth:25}, 6:{cellWidth:25} },
+        didDrawPage: (data) => {
+          doc.setFontSize(8); doc.setTextColor(150);
+          doc.text(`Halaman ${data.pageNumber}`, 196, 287, {align:'right'});
+        }
+      });
+      doc.save(`Laporan-BKU-${slug(selectedEvent.name)}.pdf`);
+    } else {
+      doc.setFontSize(15); doc.setTextColor(18, 59, 99); doc.text("REKAPITULASI PEMBAYARAN IURAN PESERTA", 14, 15);
+      doc.setFontSize(10); doc.setTextColor(100); doc.text(`Kegiatan: ${selectedEvent.name} | Tanggal Cetak: ${dateFmt(today())}`, 14, 21);
+      doc.line(14, 23, 196, 23);
+
+      const rows = members.map((m, i) => {
+        const due = Number(m.requiredAmount??selectedEvent.defaultFee??0);
+        const paid = getPaid(m.id);
+        const sisa = Math.max(0, due - paid);
+        return [
+          i+1,
+          m.name,
+          m.phone||'-',
+          money(due),
+          money(paid),
+          money(sisa),
+          paid >= due ? 'LUNAS' : 'BELUM LUNAS'
+        ];
+      });
+
+      doc.autoTable({
+        startY: 27,
+        head: [['No', 'Nama Peserta', 'No HP', 'Wajib Iuran', 'Terbayar', 'Sisa', 'Status']],
+        body: rows,
+        theme: 'striped',
+        headStyles: { fillColor: [18, 59, 99], fontSize: 8, fontStyle: 'bold' },
+        styles: { fontSize: 8, cellPadding: 2.5 },
+        didDrawPage: (data) => {
+          doc.setFontSize(8); doc.setTextColor(150);
+          doc.text(`Halaman ${data.pageNumber}`, 196, 287, {align:'right'});
+        }
+      });
+      doc.save(`Rekap-Peserta-${slug(selectedEvent.name)}.pdf`);
+    }
+    toast('File PDF berhasil dibuat.');
+  } catch(e){ toast(errText(e)); }
+  finally { hideLoading(); }
+}
+
+function exportCSV(){
+  if(!selectedEvent){ toast('Pilih kegiatan terlebih dahulu.'); return; }
+  const rows=[['Tanggal','Nama Kegiatan','Jenis','Uraian','Nama Peserta','Metode','Masuk (Rp)','Keluar (Rp)','Status']];
+  transactions.forEach(t=>{
+    rows.push([t.paymentDate, selectedEvent.name, typeName(t.type), t.note, memberName(t.memberId), t.method, t.type!=='expense'?t.amount:0, t.type==='expense'?t.amount:0, t.status]);
+  });
+  const csv = rows.map(r=>r.map(v=>`"${String(v||'').replace(/"/g,'""')}"`).join(';')).join('\r\n');
+  const blob = new Blob(['\ufeff'+csv], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = `BKU-${slug(selectedEvent.name)}.csv`; a.click();
+  toast('File CSV diunduh.');
+}
+
+function terbilang(n){
+  if(n===0)return'nol'; const a=['','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan','sepuluh','sebelas'];
+  function w(x){
+    if(x<12)return a[x]; if(x<20)return w(x-10)+' belas'; if(x<100)return w(Math.floor(x/10))+' puluh '+w(x%10);
+    if(x<200)return 'seratus '+w(x-100); if(x<1000)return w(Math.floor(x/100))+' ratus '+w(x%100);
+    if(x<2000)return 'seribu '+w(x-1000); if(x<1e6)return w(Math.floor(x/1000))+' ribu '+w(x%1000);
+    if(x<1e9)return w(Math.floor(x/1e6))+' juta '+w(x%1e6); return String(x);
+  }
+  return w(Math.floor(n)).replace(/\s+/g,' ').trim();
+}
+
+// Event Listeners Initialization
+$('#loginForm').addEventListener('submit',async e=>{
+  e.preventDefault(); $('#loginError').textContent='';
+  showLoading('Proses Masuk…');
+  try{ await signInWithEmailAndPassword(auth,$('#email').value.trim(),$('#password').value); }
+  catch(ex){ $('#loginError').textContent=errText(ex); }
+  finally{ hideLoading(); }
+});
+
+$('#togglePasswordBtn').onclick=()=>{
+  const pwd=$('#password'); const isPwd=pwd.type==='password';
+  pwd.type=isPwd?'text':'password'; $('#togglePasswordBtn').textContent=isPwd?'🙈':'👁️';
+};
+
 $('#logoutBtn').onclick=()=>signOut(auth);
 document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>setPage(b.dataset.page));
-onAuthStateChanged(auth,async user=>{currentUser=user;if(user){$('#loginView').classList.add('hidden');$('#appView').classList.remove('hidden');$('#userEmail').textContent=user.email||'Admin';try{await loadEvents();setPage(currentPage);}catch(e){$('#mainContent').innerHTML=`<div class="panel"><h3>Data belum bisa dibuka</h3><p>${esc(errText(e))}</p><p class="small">Periksa Firestore Security Rules. Jangan mengubah rules menjadi akses publik.</p></div>`;}}else{$('#appView').classList.add('hidden');$('#loginView').classList.remove('hidden');}});
+
+onAuthStateChanged(auth,async user=>{
+  currentUser=user;
+  if(user){
+    $('#loginView').classList.add('hidden');
+    $('#appView').classList.remove('hidden');
+    $('#userEmail').textContent=user.email||'Admin';
+    try{ await loadEvents(); setPage(currentPage); }
+    catch(e){ $('#mainContent').innerHTML=`<div class="panel"><h3>Gagal Memuat Data</h3><p>${esc(errText(e))}</p></div>`; }
+  }else{
+    $('#appView').classList.add('hidden');
+    $('#loginView').classList.remove('hidden');
+  }
+});
 </script>
 </body>
 </html>
