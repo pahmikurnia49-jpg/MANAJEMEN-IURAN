@@ -35,9 +35,9 @@ button:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:10px 12px;background:white;color:var(--ink);outline:0;transition:border-color .15s}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,111,235,0.12)}
 .field textarea{min-height:68px;resize:vertical}
-.pwd-wrap{position:relative;display:flex;align-items:center}
-.pwd-wrap input{padding-right:42px}
-.pwd-toggle{position:absolute;right:4px;background:transparent;border:0;color:var(--muted);padding:8px 10px;font-size:16px;border-radius:8px;cursor:pointer}
+.pwd-wrap{position:relative;display:flex;align-items:center;width:100%}
+.pwd-wrap input{padding-right:45px;width:100%}
+.pwd-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:var(--muted);padding:6px 8px;font-size:16px;border-radius:8px;cursor:pointer;line-height:1}
 .pwd-toggle:hover{background:#f1f5f9;color:var(--navy)}
 .error{color:var(--red);font-size:12px;min-height:18px;margin-top:4px}
 .notice{padding:10px 12px;border-radius:10px;background:#fff8df;color:#735b00;font-size:12px;margin:0 0 14px;line-height:1.4;border:1px solid #f2e3a1}
@@ -124,7 +124,7 @@ tr:last-child td{border-bottom:0}
         <label for="password">Kata sandi</label>
         <div class="pwd-wrap">
           <input id="password" type="password" autocomplete="current-password" required placeholder="Kata sandi">
-          <button type="button" id="togglePasswordBtn" class="pwd-toggle" title="Lihat/Sembunyikan Kata Sandi">👁️</button>
+          <button type="button" id="togglePasswordBtn" class="pwd-toggle" onclick="togglePasswordVisibility()" title="Lihat/Sembunyikan Kata Sandi">👁️</button>
         </div>
       </div>
       <button style="width:100%;margin-top:8px" type="submit">Masuk ke Sistem</button>
@@ -161,6 +161,18 @@ tr:last-child td{border-bottom:0}
 <div id="modalRoot"></div>
 <div id="toast" class="toast hidden"></div>
 
+<script>
+  function togglePasswordVisibility() {
+    var pwd = document.getElementById('password');
+    var btn = document.getElementById('togglePasswordBtn');
+    if (pwd && btn) {
+      var isPwd = pwd.type === 'password';
+      pwd.type = isPwd ? 'text' : 'password';
+      btn.textContent = isPwd ? '🙈' : '👁️';
+    }
+  }
+</script>
+
 <!-- External Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -168,9 +180,9 @@ tr:last-child td{border-bottom:0}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-import { getFirestore, collection, doc, getDocs, getDoc, addDoc, setDoc, updateDoc, deleteDoc, query, orderBy, serverTimestamp, writeBatch } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getFirestore, collection, doc, getDocs, getDoc, addDoc, setDoc, updateDoc, deleteDoc, query, orderBy, serverTimestamp, writeBatch } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCLptzfb11LliqVs2OxkmuBQfipphPyNZI",
@@ -559,6 +571,7 @@ function openExcelImportModal(){
     const reader = new FileReader();
     reader.onload = ev => {
       try {
+        if (typeof XLSX === 'undefined') { throw new Error('Library Excel belum siap.'); }
         const data = new Uint8Array(ev.target.result);
         const workbook = XLSX.read(data, {type: 'array'});
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
@@ -664,7 +677,7 @@ function openMemberCardModal(memberId){
   </div></div>`;
 
   root.querySelector('#closeModal').onclick=()=>root.innerHTML='';
-  root.querySelectorAll('[data-dl-receipt]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.dataset.dlReceipt));
+  root.querySelectorAll('[data-dl-receipt]').forEach(b=>b.onclick=()=>downloadSingleTxReceipt(b.getAttribute('data-dl-receipt')));
   root.querySelector('#cardPdfBtn').onclick=()=>downloadMemberCardPdf(m, payList, due, totalPaid, sisa, isLunas);
 }
 
@@ -764,7 +777,7 @@ async function downloadSingleTxReceipt(txId){
   const payList = getMemberPayments(t.memberId);
   const seqIndex = payList.findIndex(x=>x.id===txId) + 1;
   const totalPaid = payList.reduce((s,x)=>s+Number(x.amount||0),0);
-  const due = Number(m?.requiredAmount??selectedEvent.defaultFee??0);
+  const due = Number(m?.requiredAmount??selectedEvent?.defaultFee??0);
   const sisa = Math.max(0, due - totalPaid);
   const isLunas = totalPaid >= due;
 
@@ -811,7 +824,8 @@ async function downloadSingleTxReceipt(txId){
 }
 
 function downloadMemberCardPdf(m, payList, due, totalPaid, sisa, isLunas){
-  const { jsPDF } = window.jspdf;
+  const jsPDF = window.jspdf ? window.jspdf.jsPDF : null;
+  if(!jsPDF){ toast('Library PDF belum siap.'); return; }
   const doc = new jsPDF({unit:'mm', format:'a4'});
 
   doc.setFontSize(16); doc.setTextColor(18, 59, 99); doc.text("KARTU RIWAYAT PEMBAYARAN IURAN", 14, 15);
@@ -857,7 +871,8 @@ async function generatePdfReport(type, evId=null){
   showLoading('Membuat file PDF Laporan…');
   try {
     if(!selectedEvent || selectedEvent.id !== targetId){ await loadEventDetails(targetId); }
-    const { jsPDF } = window.jspdf;
+    const jsPDF = window.jspdf ? window.jspdf.jsPDF : null;
+    if(!jsPDF){ toast('Library PDF belum siap.'); return; }
     const doc = new jsPDF({orientation:'p', unit:'mm', format:'a4'});
 
     if(type==='bku'){
@@ -972,11 +987,6 @@ $('#loginForm').addEventListener('submit',async e=>{
   catch(ex){ $('#loginError').textContent=errText(ex); }
   finally{ hideLoading(); }
 });
-
-$('#togglePasswordBtn').onclick=()=>{
-  const pwd=$('#password'); const isPwd=pwd.type==='password';
-  pwd.type=isPwd?'text':'password'; $('#togglePasswordBtn').textContent=isPwd?'🙈':'👁️';
-};
 
 $('#logoutBtn').onclick=()=>signOut(auth);
 document.querySelectorAll('.navbtn').forEach(b=>b.onclick=()=>setPage(b.dataset.page));
